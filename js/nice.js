@@ -47,14 +47,87 @@
 //     })
 //
 
+function zan(number) {
+    var pic=document.getElementById('fenleipic'+number).src
+    $.ajax({
+        url:"./php/index2.php",/*待修改*/
+        type:"POST",
+        dataType:"json",
+        data:{
+            fenlei_zan:pic,
 
+        },
+        success:function(data){
+            alert('ok')
 
+        },
+        error:function(){
 
+            alert('无法连接服务器')
+        }
+    })
+}
 
+function click(number) {
+    var pic=document.getElementById('fenleipic'+number).src
+    $.ajax({
+        url:"./php/index2.php",/*待修改*/
+        type:"POST",
+        dataType:"json",
+        data:{
+            fenlei_click:pic,
 
+        },
+        success:function(data){
+    alert('ok')
+        },
+        error:function(){
 
+            alert('无法连接服务器')
+        }
+    })
+}
 
+function zan1(number) {
+    var pic=document.getElementById('xuanpic'+number).src
+    $.ajax({
+        url:"./php/index2.php",/*待修改*/
+        type:"POST",
+        dataType:"json",
+        data:{
+            xuan_zan:pic,
 
+        },
+        success:function(data){
+            alert('ok')
+
+        },
+        error:function(){
+
+            alert('无法连接服务器')
+        }
+    })
+}
+
+function click1(number) {
+    var pic=document.getElementById('xuanipic'+number).src
+    $.ajax({
+        url:"./php/index2.php",/*待修改*/
+        type:"POST",
+        dataType:"json",
+        data:{
+            xuan_click:pic,
+
+        },
+        success:function(data){
+            alert('ok')
+        },
+        error:function(){
+
+            alert('无法连接服务器')
+        }
+    })
+}
 
 
 
@@ -152,10 +225,46 @@ for (let i=0;i<12;i++){
 
 
 
+function jieguo(number) {
+    var pic=document.getElementById('jieguopic'+number).src
+    $.ajax({
+        url:"./php/index2.php",/*待修改*/
+        type:"POST",
+        dataType:"json",
+        data:{
+            jieguo_click:pic,
+
+        },
+        success:function(data){
+            alert('ok')
+        },
+        error:function(){
+
+            alert('无法连接服务器')
+        }
+    })
+}
 
 
+function result_zan(number) {
+    var pic=document.getElementById('jieguopic'+number).src
+    $.ajax({
+        url:"./php/index2.php",/*待修改*/
+        type:"POST",
+        dataType:"json",
+        data:{
+            zan_result:pic,
 
+        },
+        success:function(data){
+            alert('ok')
+        },
+        error:function(){
 
+            alert('无法连接服务器')
+        }
+    })
+}
 
 // var out = document.getElementsByClassName('zan');
 // out.onclick =function() {
