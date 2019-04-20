@@ -12,15 +12,15 @@
     </div>
     <ul class="top_list">
             <!--  href待填入  -->
-        <li><a href="#">首页</a></li>
-        <li><a href="">精选</a></li>
-        <li><a href="#middle_2">分类图片</a></li>
-        <li><a href="#middle_1">收藏夹</a></li>
+        <li><a id="to_index">首页</a></li>
+        <!--<li><a href="">精选</a></li>-->
+        <!--<li><a href="#middle_2">分类图片</a></li>-->
+        <!--<li><a href="#middle_1">收藏夹</a></li>-->
         <li><a href="#help">帮助</a></li>
     </ul>
     <div class="login">
         <button id="displaysign" onclick="start()"><img src="img/用户.png"></button>&nbsp;&nbsp;&nbsp;
-        <img src="img/星星.png" class="star">
+        <!--<img src="img/星星.png" class="star">-->
 
     </div>
 
@@ -30,7 +30,39 @@
         <input class="search_btn" type="submit" value="" id="search_result">
     <!--<a class="search_btn" type="submit"  id="search_result" ></a>-->
 
-    <p>如:xxxxxxxxxxxxxxxxxxx</p>
+    <div class="pictures_title">
+        <span class="pictures_name">景色：</span>
+        <span class="pictures_btn" id="btn0">校园一角</span>
+        <span  class="pictures_btn" id="btn1" >时刻</span>
+        <span  class="pictures_btn" id="btn2" >动物</span>
+        <br>
+        <span class="pictures_name">日常：</span>
+        <span  class="pictures_btn" id="btn3" >学习</span>
+        <span  class="pictures_btn" id="btn4" >课堂</span>
+        <span  class="pictures_btn" id="btn5" >竞赛</span>
+        <span  class="pictures_btn" id="btn6" >美食</span>
+        <span  class="pictures_btn" id="btn7" >环保</span>
+        <span  class="pictures_btn" id="btn8">活动</span>
+        <span  class="pictures_btn" id="btn9" >志愿</span>
+        <span  class="pictures_btn" id="btn10" >科技</span>
+        <span  class="pictures_btn" id="btn11" >运动</span>
+        <span  class="pictures_btn" id="btn12" >小确幸</span>
+        <br>
+        <span class="pictures_name">节日：</span>
+        <span  class="pictures_btn" id="btn13" >元旦</span>
+        <span  class="pictures_btn" id="btn14" >春节</span>
+        <span  class="pictures_btn" id="btn15" >元宵</span>
+        <span  class="pictures_btn" id="btn16" >清明</span>
+        <span  class="pictures_btn" id="btn17" >青年节</span>
+        <span  class="pictures_btn" id="btn18" >父亲节</span>
+        <span  class="pictures_btn" id="btn19">母亲节</span>
+        <span  class="pictures_btn" id="btn20" >建党节</span>
+        <span  class="pictures_btn" id="btn21" >建军节</span>
+        <span  class="pictures_btn" id="btn22" >教师节</span>
+        <span  class="pictures_btn" id="btn23" >中秋节</span>
+        <span  class="pictures_btn" id="btn24" >国庆节</span>
+        <span  class="pictures_btn" id="btn25" >感恩节</span>
+    </div>
 </div>
 <br/>
 <br/>
@@ -127,93 +159,94 @@
     </div>
 </form>
 <!--  登录表单  -->
-<div class="middle1" id="middle_1">
-    <h2>收藏夹</h2>
-    <form action="" class="picture_wrap">
-        <ul class="picture1">
-            <li><a href="#"> <img src="img/test.png" alt=""> </a></li>
-            <li><a href="#"> <img src="img/test.png" alt=""> </a></li>
-            <li><a href="#"> <img src="img/test.png" alt=""> </a></li>
-            <li><a href="#"> <img src="img/test.png" alt=""> </a></li>
-            <li><a href="#"> <img src="img/test.png" alt=""> </a></li>
-            <li><a href="#"> <img src="img/test.png" alt=""> </a></li>
-            <li><a href="#"> <img src="img/test.png" alt=""> </a></li>
-            <li><a href="#"> <img src="img/test.png" alt=""> </a></li>
+<!--<div class="middle1" id="middle_1">-->
+    <!--<h2>收藏夹</h2>-->
+    <!--<form action="" class="picture_wrap">-->
+        <!--<ul class="picture1">-->
+            <!--<li><a href="#"> <img src="img/test.png" alt=""> </a></li>-->
+            <!--<li><a href="#"> <img src="img/test.png" alt=""> </a></li>-->
+            <!--<li><a href="#"> <img src="img/test.png" alt=""> </a></li>-->
+            <!--<li><a href="#"> <img src="img/test.png" alt=""> </a></li>-->
+            <!--<li><a href="#"> <img src="img/test.png" alt=""> </a></li>-->
+            <!--<li><a href="#"> <img src="img/test.png" alt=""> </a></li>-->
+            <!--<li><a href="#"> <img src="img/test.png" alt=""> </a></li>-->
+            <!--<li><a href="#"> <img src="img/test.png" alt=""> </a></li>-->
 
-        </ul>
+        <!--</ul>-->
 
-    </form>
-</div>
+    <!--</form>-->
+<!--</div>-->
+
+<!--<div class="middle2" id="middle_2">-->
+    <!--<h2>分类图片</h2>-->
+    <!--<form action="" class="picture_wrap">-->
+        <!--<ul class="picture1">-->
+            <!--<li><a href=""class="pictures"> <img src="img/test.png" alt="" onclick="click(0)" id="fenleipic0"> </a>-->
+                <!--<a href="" class="cang"> <img src="img/cang.png" alt="" > </a>-->
+                <!--<a href="" class="zan"> <img src="img/zan1.png" alt="" id="zan0" onclick="zan(0)" class="zan"> </a>-->
+                <!--<img src="img/back_btn.png" class="back_btn">-->
+            <!--</li>-->
+            <!--<li><a href=""class="pictures"> <img src="img/test.png" alt="" onclick="click(1)" id="fenleipic1"> </a>-->
+                <!--<a href="" class="cang"> <img src="img/cang.png" alt=""> </a>-->
+                <!--<a href="" class="zan"> <img src="img/zan1.png" alt="" id="zan1" onclick="zan(1)" class="zan"> </a>-->
+                <!--<img src="img/back_btn.png" class="back_btn">-->
+            <!--</li>-->
+            <!--<li><a href="#"class="pictures"> <img src="img/test.png" alt="" onclick="click(2)" id="fenleipic2"> </a>-->
+                <!--<a href="#" class="cang"> <img src="img/cang.png" alt=""> </a>-->
+                <!--<a href="#" class="zan"> <img src="img/zan1.png" alt="" id="zan2" onclick="zan(2)" class="zan"> </a>-->
+                <!--<img src="img/back_btn.png" class="back_btn">-->
+            <!--</li>-->
+            <!--<li><a href="#"class="pictures"> <img src="img/test.png" alt="" onclick="click(3)" id="fenleipic3"> </a>-->
+                <!--<a href="#" class="cang"> <img src="img/cang.png" alt=""> </a>-->
+                <!--<a href="#" class="zan"> <img src="img/zan1.png" alt="" id="zan3" onclick="zan(3)" class="zan"> </a>-->
+                <!--<img src="img/back_btn.png" class="back_btn">-->
+            <!--</li>-->
+            <!--<li><a href="#"class="pictures"> <img src="img/test.png" alt="" onclick="click(4)" id="fenleipic4"> </a>-->
+                <!--<a href="#" class="cang"> <img src="img/cang.png" alt=""> </a>-->
+                <!--<a href="#" class="zan"> <img src="img/zan1.png" alt="" id="zan4" onclick="zan(4)" class="zan"> </a>-->
+                <!--<img src="img/back_btn.png" class="back_btn">-->
+            <!--</li>-->
+            <!--<li><a href="#"class="pictures"> <img src="img/test.png" alt="" onclick="click(5)" id="fenleipic5"> </a>-->
+                <!--<a href="#" class="cang"> <img src="img/cang.png" alt=""> </a>-->
+                <!--<a href="#" class="zan"> <img src="img/zan1.png" alt="" id="zan5" onclick="zan(5)" class="zan"> </a>-->
+                <!--<img src="img/back_btn.png" class="back_btn">-->
+            <!--</li>-->
+            <!--<li><a href="#"class="pictures"> <img src="img/test.png" alt="" onclick="click(6)" id="fenleipic6"> </a>-->
+                <!--<a href="#" class="cang"> <img src="img/cang.png" alt=""> </a>-->
+                <!--<a href="#" class="zan"> <img src="img/zan1.png" alt="" id="zan6" onclick="zan(6)" class="zan"> </a>-->
+                <!--<img src="img/back_btn.png" class="back_btn">-->
+            <!--</li>-->
+            <!--<li><a href="#"class="pictures"> <img src="img/test.png" alt="" onclick="click(7)" id="fenleipic7"> </a>-->
+                <!--<a href="#" class="cang"> <img src="img/cang.png" alt=""> </a>-->
+                <!--<a href="#" class="zan"> <img src="img/zan1.png" alt="" id="zan7" onclick="zan(7)" class="zan"> </a>-->
+                <!--<img src="img/back_btn.png" class="back_btn">-->
+            <!--</li>-->
+            <!--<li><a href="#"class="pictures"> <img src="img/test.png" alt="" onclick="click(8)" id="fenleipic8"> </a>-->
+                <!--<a href="#" class="cang"> <img src="img/cang.png" alt=""> </a>-->
+                <!--<a href="#" class="zan"> <img src="img/zan1.png" alt="" id="zan8" onclick="zan(8)" class="zan"> </a>-->
+                <!--<img src="img/back_btn.png" class="back_btn">-->
+            <!--</li>-->
+            <!--<li><a href="#"class="pictures"> <img src="img/test.png" alt="" onclick="click(9)" id="fenleipic9"> </a>-->
+                <!--<a href="#" class="cang"> <img src="img/cang.png" alt=""> </a>-->
+                <!--<a href="#" class="zan"> <img src="img/zan1.png" alt="" id="zan9" onclick="zan(9)" class="zan"> </a>-->
+                <!--<img src="img/back_btn.png" class="back_btn">-->
+            <!--</li>-->
+            <!--<li><a href="#"class="pictures"> <img src="img/test.png" alt="" onclick="click(10)" id="fenleipic10"> </a>-->
+                <!--<a href="#" class="cang"> <img src="img/cang.png" alt=""> </a>-->
+                <!--<a href="#" class="zan"> <img src="img/zan1.png" alt="" id="zan10" onclick="zan(10)" class="zan"> </a>-->
+                <!--<img src="img/back_btn.png" class="back_btn">-->
+            <!--</li>-->
+            <!--<li><a href="#"class="pictures"> <img src="img/test.png" alt="" onclick="click(11)" id="fenleipic11"> </a>-->
+                <!--<a href="#" class="cang"> <img src="img/cang.png" alt=""> </a>-->
+                <!--<a href="#" class="zan"> <img src="img/zan1.png" alt="" id="zan11" onclick="zan(11)" class="zan"> </a>-->
+                <!--<img src="img/back_btn.png" class="back_btn">-->
+            <!--</li>-->
+
+        <!--</ul>-->
+
+    <!--</form>-->
+<!--</div>-->
 <div class="bg"></div>
-<div class="middle2" id="middle_2">
-    <h2>分类图片</h2>
-    <form action="" class="picture_wrap">
-        <ul class="picture1">
-            <li><a href=""class="pictures"> <img src="img/test.png" alt="" onclick="click(0)" id="fenleipic0"> </a>
-                <a href="" class="cang"> <img src="img/cang.png" alt="" > </a>
-                <a href="" class="zan"> <img src="img/zan1.png" alt="" id="zan0" onclick="zan(0)" class="zan"> </a>
-                <img src="img/back_btn.png" class="back_btn">
-            </li>
-            <li><a href=""class="pictures"> <img src="img/test.png" alt="" onclick="click(1)" id="fenleipic1"> </a>
-                <a href="" class="cang"> <img src="img/cang.png" alt=""> </a>
-                <a href="" class="zan"> <img src="img/zan1.png" alt="" id="zan1" onclick="zan(1)" class="zan"> </a>
-                <img src="img/back_btn.png" class="back_btn">
-            </li>
-            <li><a href="#"class="pictures"> <img src="img/test.png" alt="" onclick="click(2)" id="fenleipic2"> </a>
-                <a href="#" class="cang"> <img src="img/cang.png" alt=""> </a>
-                <a href="#" class="zan"> <img src="img/zan1.png" alt="" id="zan2" onclick="zan(2)" class="zan"> </a>
-                <img src="img/back_btn.png" class="back_btn">
-            </li>
-            <li><a href="#"class="pictures"> <img src="img/test.png" alt="" onclick="click(3)" id="fenleipic3"> </a>
-                <a href="#" class="cang"> <img src="img/cang.png" alt=""> </a>
-                <a href="#" class="zan"> <img src="img/zan1.png" alt="" id="zan3" onclick="zan(3)" class="zan"> </a>
-                <img src="img/back_btn.png" class="back_btn">
-            </li>
-            <li><a href="#"class="pictures"> <img src="img/test.png" alt="" onclick="click(4)" id="fenleipic4"> </a>
-                <a href="#" class="cang"> <img src="img/cang.png" alt=""> </a>
-                <a href="#" class="zan"> <img src="img/zan1.png" alt="" id="zan4" onclick="zan(4)" class="zan"> </a>
-                <img src="img/back_btn.png" class="back_btn">
-            </li>
-            <li><a href="#"class="pictures"> <img src="img/test.png" alt="" onclick="click(5)" id="fenleipic5"> </a>
-                <a href="#" class="cang"> <img src="img/cang.png" alt=""> </a>
-                <a href="#" class="zan"> <img src="img/zan1.png" alt="" id="zan5" onclick="zan(5)" class="zan"> </a>
-                <img src="img/back_btn.png" class="back_btn">
-            </li>
-            <li><a href="#"class="pictures"> <img src="img/test.png" alt="" onclick="click(6)" id="fenleipic6"> </a>
-                <a href="#" class="cang"> <img src="img/cang.png" alt=""> </a>
-                <a href="#" class="zan"> <img src="img/zan1.png" alt="" id="zan6" onclick="zan(6)" class="zan"> </a>
-                <img src="img/back_btn.png" class="back_btn">
-            </li>
-            <li><a href="#"class="pictures"> <img src="img/test.png" alt="" onclick="click(7)" id="fenleipic7"> </a>
-                <a href="#" class="cang"> <img src="img/cang.png" alt=""> </a>
-                <a href="#" class="zan"> <img src="img/zan1.png" alt="" id="zan7" onclick="zan(7)" class="zan"> </a>
-                <img src="img/back_btn.png" class="back_btn">
-            </li>
-            <li><a href="#"class="pictures"> <img src="img/test.png" alt="" onclick="click(8)" id="fenleipic8"> </a>
-                <a href="#" class="cang"> <img src="img/cang.png" alt=""> </a>
-                <a href="#" class="zan"> <img src="img/zan1.png" alt="" id="zan8" onclick="zan(8)" class="zan"> </a>
-                <img src="img/back_btn.png" class="back_btn">
-            </li>
-            <li><a href="#"class="pictures"> <img src="img/test.png" alt="" onclick="click(9)" id="fenleipic9"> </a>
-                <a href="#" class="cang"> <img src="img/cang.png" alt=""> </a>
-                <a href="#" class="zan"> <img src="img/zan1.png" alt="" id="zan9" onclick="zan(9)" class="zan"> </a>
-                <img src="img/back_btn.png" class="back_btn">
-            </li>
-            <li><a href="#"class="pictures"> <img src="img/test.png" alt="" onclick="click(10)" id="fenleipic10"> </a>
-                <a href="#" class="cang"> <img src="img/cang.png" alt=""> </a>
-                <a href="#" class="zan"> <img src="img/zan1.png" alt="" id="zan10" onclick="zan(10)" class="zan"> </a>
-                <img src="img/back_btn.png" class="back_btn">
-            </li>
-            <li><a href="#"class="pictures"> <img src="img/test.png" alt="" onclick="click(11)" id="fenleipic11"> </a>
-                <a href="#" class="cang"> <img src="img/cang.png" alt=""> </a>
-                <a href="#" class="zan"> <img src="img/zan1.png" alt="" id="zan11" onclick="zan(11)" class="zan"> </a>
-                <img src="img/back_btn.png" class="back_btn">
-            </li>
-
-        </ul>
-
-    </form>
-</div>
 <div id="help">
     <div class="logo2">
         <img src="img/logo1.png">
@@ -264,4 +297,9 @@ search_result.onclick=function () {
         window.location.href ="./result.html?key="+search_text1
     }
 };</script>
+<script>var to_index=document.getElementById('to_index')
+    to_index.onclick=function () {
+        window.location.href ="./index.html"
+    }
+</script>
 </html>

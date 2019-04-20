@@ -23,10 +23,7 @@ body {
     background: url('../img/back4.png') no-repeat;
     background-size: 100% 100%;
 }
-@font-face {
-    font-family: yihei;
-    src: url('../word/yihei.otf');
-}
+
 
 
 
@@ -69,7 +66,7 @@ body {
 }
 .top_list {
     padding-top: 50px;
-    width: 520px;
+    width: 414px;
     margin: 0 auto;
 }
 
@@ -209,7 +206,7 @@ color: #a2a2a2;
     width: 1364px;
 }
 .picture1 li{
-    padding-bottom: 8px;
+    padding-bottom: 20px;
     padding-right: 4px;
     padding-left: 4px;
     float: left;
@@ -243,27 +240,47 @@ color: #a2a2a2;
 
 
 
+/*.zan1 {*/
+    /*position: absolute;*/
+    /*z-index: 999;*/
+    /*top: 129px;*/
+    /*left: 2px;*/
+    /*float: left;*/
+    /*width: 20px;*/
+    /*height: 20px;*/
+/*}*/
+/*.zan1 img{*/
+     /*position: absolute;*/
+
+     /*float: left;*/
+     /*width: 25px;*/
+     /*height: 25px;*/
+ /*}*/
+/*.zan1 img:hover {*/
+    /*cursor: pointer;*/
+/*}*/
+
+
+
 .zan1 {
     position: absolute;
-    z-index: 999;
-    top: 129px;
+    z-index: 990;
+    top: 150px;
     left: 2px;
     float: left;
     width: 20px;
     height: 20px;
 }
-.zan1 img{
-     position: absolute;
+.zan1 {
+    position: absolute;
 
-     float: left;
-     width: 25px;
-     height: 25px;
- }
-.zan1 img:hover {
+    float: left;
+    width: 25px;
+    height: 25px;
+}
+.zan1:hover {
     cursor: pointer;
 }
-
-
 
 
 .zan {
@@ -319,11 +336,36 @@ color: #a2a2a2;
 }
 
 
+.btns {
+    margin: 0 auto;
+    margin-top: 10px;
+
+    width: 400px;
+    text-align: center;
+    color: white;
+    height: 25px;
+}
+.btns span {
+margin-right: 10px;
+    margin-left: 10px;
 
 
+}
 
+.btns span:hover{
+    cursor: pointer;
+}
 
-
+.btn1 {
+    width: 28px;
+    background: #04bafb;
+    border-radius: 1em;
+    display: inline-block;
+    height: 28px;
+    text-align: center;
+    margin-right: 10px;
+    margin-left: 10px;
+}
 
 
 
@@ -462,7 +504,7 @@ color: #a2a2a2;
     color:#04bafb ;
     outline: none;
     font-size: 30px;
-    font-family: "Segoe Script";
+
     margin-top:50px;
     margin-right: 200px;
 }
@@ -477,4 +519,36 @@ color: #a2a2a2;
     margin-top: 8px;
     height: 36px;
     width: 36px;
+}
+
+.houtai{
+    padding-top: -20px;
+    color: white;
+    background: #1da3f5;
+    border-radius: 1em;
+    width: 100px;
+    text-align: center;
+    margin: 0 auto;
+    float: right;
+
+}
+.houtai:hover{
+    cursor: pointer;
+}
+
+
+.pictures_title{
+
+    text-align: center;
+}
+.pictures_btn{
+    color: white;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.pictures_name {
+    color: wheat;
+    margin-left: 5px;
+    margin-right: 5px;
 }

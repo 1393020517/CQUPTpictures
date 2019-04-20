@@ -7,9 +7,9 @@
  * function: 搜索功能
  */
 //session_start();
-header("Content-type: text/html; charset=GB2312");
+header("Content-type: text/html; charset=utf-8");
 include_once("conn.php");
-$words = $_POST['text'];
+$words = urldecode($_POST['text']);
     $sqlstr = "SELECT paths FROM photos WHERE label='$words'";
     $result = mysqli_query($a,$sqlstr);
     $row = mysqli_num_rows($result);
@@ -17,10 +17,17 @@ $words = $_POST['text'];
         echo json_encode(["status"=>false]);    //未找到标签
     }
     else{
-        $arr = mysqli_fetch_row($result);
-        for($i=0;$i<count($arr);$i++) {
-          echo "$arr[$i]";     //输出路径
+//        $arr = mysqli_fetch_row($result);
+//        for($i=0;$i<count($arr);$i++) {
+//          echo json_encode($arr[$i]);     //输出路径
+//        }
+        $rows = [];
+        while($row = mysqli_fetch_assoc($result)){
+            foreach($row as $temp){
+                $rows[] = array('title'=>$words,'src'=>$temp);
+            }
         }
+        echo json_encode($rows);
 }
 //if(isset($_POST['save'])&&$_POST['save']!=null){     //收藏功能
 //    $arr=$_POST['save'];

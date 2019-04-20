@@ -50,11 +50,11 @@
 function zan(number) {
     var pic=document.getElementById('fenleipic'+number).src
     $.ajax({
-        url:"./php/index2.php",/*待修改*/
+        url:"./php/thumb-up.php",/*待修改*/
         type:"POST",
         dataType:"json",
         data:{
-            fenlei_zan:pic,
+            zan:pic,
 
         },
         success:function(data){
@@ -71,11 +71,11 @@ function zan(number) {
 function click(number) {
     var pic=document.getElementById('fenleipic'+number).src
     $.ajax({
-        url:"./php/index2.php",/*待修改*/
+        url:"./php/click.php",/*待修改*/
         type:"POST",
         dataType:"json",
         data:{
-            fenlei_click:pic,
+            click:pic,
 
         },
         success:function(data){
@@ -91,11 +91,11 @@ function click(number) {
 function zan1(number) {
     var pic=document.getElementById('xuanpic'+number).src
     $.ajax({
-        url:"./php/index2.php",/*待修改*/
+        url:"./php/thumb-up.php",/*待修改*/
         type:"POST",
         dataType:"json",
         data:{
-            xuan_zan:pic,
+            zan:pic,
 
         },
         success:function(data){
@@ -112,11 +112,11 @@ function zan1(number) {
 function click1(number) {
     var pic=document.getElementById('xuanipic'+number).src
     $.ajax({
-        url:"./php/index2.php",/*待修改*/
+        url:"./php/click.php",/*待修改*/
         type:"POST",
         dataType:"json",
         data:{
-            xuan_click:pic,
+            click:pic,
 
         },
         success:function(data){
@@ -228,11 +228,11 @@ for (let i=0;i<12;i++){
 function jieguo(number) {
     var pic=document.getElementById('jieguopic'+number).src
     $.ajax({
-        url:"./php/index2.php",/*待修改*/
+        url:"./php/click.php",/*待修改*/
         type:"POST",
         dataType:"json",
         data:{
-            jieguo_click:pic,
+            click:pic,
 
         },
         success:function(data){
@@ -249,11 +249,11 @@ function jieguo(number) {
 function result_zan(number) {
     var pic=document.getElementById('jieguopic'+number).src
     $.ajax({
-        url:"./php/index2.php",/*待修改*/
+        url:"./php/thumb-up.php",/*待修改*/
         type:"POST",
         dataType:"json",
         data:{
-            zan_result:pic,
+            zan:pic,
 
         },
         success:function(data){

@@ -16,7 +16,7 @@
             <li><a >首页</a></li>
             <li><a href="#middle12">精选</a></li>
             <li><a href="#middle13">分类图片</a></li>
-            <li><a href="JavaScript:undo();">收藏夹</a></li>
+            <!--<li><a href="JavaScript:undo();">收藏夹</a></li>-->
             <li><a href="#help">帮助</a></li>
         </ul>
         <div class="login">
@@ -30,7 +30,39 @@
             <input class="search_text" type="text" value="" placeholder="请按标签搜索" id="search_1">
             <input class="search_btn" type="submit" value="" id="search_btn">
 
-        <p>如:xxxxxxxxxxxxxxxxxxx</p>
+        <div class="pictures_title">
+            <span class="pictures_name">景色：</span>
+            <span class="pictures_btn" id="btn0">校园一角</span>
+            <span  class="pictures_btn" id="btn1" >时刻</span>
+            <span  class="pictures_btn" id="btn2" >动物</span>
+            <br>
+            <span class="pictures_name">日常：</span>
+            <span  class="pictures_btn" id="btn3" >学习</span>
+            <span  class="pictures_btn" id="btn4" >课堂</span>
+            <span  class="pictures_btn" id="btn5" >竞赛</span>
+            <span  class="pictures_btn" id="btn6" >美食</span>
+            <span  class="pictures_btn" id="btn7" >环保</span>
+            <span  class="pictures_btn" id="btn8">活动</span>
+            <span  class="pictures_btn" id="btn9" >志愿</span>
+            <span  class="pictures_btn" id="btn10" >科技</span>
+            <span  class="pictures_btn" id="btn11" >运动</span>
+            <span  class="pictures_btn" id="btn12" >小确幸</span>
+            <br>
+            <span class="pictures_name">节日：</span>
+            <span  class="pictures_btn" id="btn13" >元旦</span>
+            <span  class="pictures_btn" id="btn14" >春节</span>
+            <span  class="pictures_btn" id="btn15" >元宵</span>
+            <span  class="pictures_btn" id="btn16" >清明</span>
+            <span  class="pictures_btn" id="btn17" >青年节</span>
+            <span  class="pictures_btn" id="btn18" >父亲节</span>
+            <span  class="pictures_btn" id="btn19">母亲节</span>
+            <span  class="pictures_btn" id="btn20" >建党节</span>
+            <span  class="pictures_btn" id="btn21" >建军节</span>
+            <span  class="pictures_btn" id="btn22" >教师节</span>
+            <span  class="pictures_btn" id="btn23" >中秋节</span>
+            <span  class="pictures_btn" id="btn24" >国庆节</span>
+            <span  class="pictures_btn" id="btn25" >感恩节</span>
+        </div>
     </div>
 
     <!--  登录表单  -->
@@ -87,22 +119,22 @@
         <form action="" class="picture_wrap">
             <ul class="picture1">
                 <li><a href="" download=""> <img id="xuanpic0" src="img/test.png" alt="" onclick="click1(0)"> </a>
-                    <img src="img/zan1.png" alt="" class="zan"  onclick="zan1(0)">
+                    <img src="img/zan1.png" alt="" class="zan1"  onclick="zan1(0)">
                    </li>
                 <li><a href="" download=""> <img  id="xuanpic1" src="img/test.png" alt="" onclick="click1(1)"> </a>
-                    <img src="img/zan1.png" alt="" class="zan"  onclick="zan1(1)"></li>
+                    <img src="img/zan1.png" alt="" class="zan1"  onclick="zan1(1)"></li>
                 <li><a href="" download=""> <img  id="xuanpic2" src="img/test.png" alt="" onclick="click1(2)"> </a>
-                    <img src="img/zan1.png" alt="" class="zan"  onclick="zan1(2)"></li>
+                    <img src="img/zan1.png" alt="" class="zan1"  onclick="zan1(2)"></li>
                 <li><a href="" download=""> <img  id="xuanpic3" src="img/test.png" alt="" onclick="click1(3)"> </a>
-                    <img src="img/zan1.png" alt="" class="zan"  onclick="zan1(3)"></li>
+                    <img src="img/zan1.png" alt="" class="zan1"  onclick="zan1(3)"></li>
                 <li><a href="" download=""> <img  id="xuanpic4" src="img/test.png" alt="" onclick="click1(4)"> </a>
-                    <img src="img/zan1.png" alt="" class="zan"  onclick="zan1(4)"></li>
+                    <img src="img/zan1.png" alt="" class="zan1"  onclick="zan1(4)"></li>
                 <li><a href="" download=""> <img  id="xuanpic5" src="img/test.png" alt="" onclick="click1(5)"> </a>
-                    <img src="img/zan1.png" alt="" class="zan"  onclick="zan1(5)"></li>
+                    <img src="img/zan1.png" alt="" class="zan1"  onclick="zan1(5)"></li>
                 <li><a href="" download=""> <img  id="xuanpic6" src="img/test.png" alt="" onclick="click1(6)"> </a>
-                    <img src="img/zan1.png" alt="" class="zan"  onclick="zan1(6)"></li>
+                    <img src="img/zan1.png" alt="" class="zan1"  onclick="zan1(6)"></li>
                 <li><a href="" download=""> <img  id="xuanpic7" src="img/test.png" alt="" onclick="click1(7)"> </a>
-                    <img src="img/zan1.png" alt="" class="zan"  onclick="zan1(7)"></li>
+                    <img src="img/zan1.png" alt="" class="zan1"  onclick="zan1(7)"></li>
             </ul>
 
         </form>
@@ -112,82 +144,100 @@
         <h2>分类图片</h2>
         <form action="" class="picture_wrap">
             <ul class="picture1">
-                <li><a href="" class="pictures"> <img id="fenleipic0" src="img/test.png" alt="" onclick="click(0)"> </a>
+                <li><a href="" class="pictures"> <img id="fenleipic0" src="img/test.png" alt="" onclick="into_result(0)"> </a>
                     <!--<img src="img/cang.png" alt="" class="cang" id="cang1" >-->
                     <img src="img/zan1.png" alt="" class="zan" id="zan1" onclick="zan(0)">
                     <img src="img/back_btn.png" class="back_btn">
-                    <div class="point">666</div>
+                    <div class="point" id="point0">666</div>
                 </li>
-                <li><a href="" class="pictures"> <img id="fenleipic1" src="img/test.png" alt="" onclick="click(1)"> </a>
+                <li><a href="" class="pictures"> <img id="fenleipic1" src="img/test.png" alt="" onclick="into_result(1)"> </a>
                     <!--<img src="img/cang.png" alt="" class="cang" id="cang2">-->
                     <img src="img/zan1.png" alt="" class="zan" id="zan2" onclick="zan(1)">
                     <img src="img/back_btn.png" class="back_btn">
-                    <div class="point">666</div>
+                    <div class="point" id="point1">666</div>
                 </li>
-                <li><a href="" class="pictures"> <img id="fenleipic2" src="img/test.png" alt="" onclick="click(2)"> </a>
+                <li><a href="" class="pictures"> <img id="fenleipic2" src="img/test.png" alt="" onclick="into_result(2)"> </a>
                     <!--<img src="img/cang.png" alt="" class="cang" id="cang3">-->
                     <img src="img/zan1.png" alt="" class="zan" id="zan3" onclick="zan(2)">
                     <img src="img/back_btn.png" class="back_btn">
-                    <div class="point">666</div>
+                    <div class="point" id="point2">666</div>
                 </li>
-                <li><a href="" class="pictures"> <img id="fenleipic3" src="img/test.png" alt="" onclick="click(3)"> </a>
+                <li><a href="" class="pictures"> <img id="fenleipic3" src="img/test.png" alt="" onclick="into_result(3)"> </a>
                     <!--<img src="img/cang.png" alt="" class="cang" id="cang4">-->
                     <img src="img/zan1.png" alt="" class="zan" id="zan4" onclick="zan(3)">
                     <img src="img/back_btn.png" class="back_btn">
-                    <div class="point">666</div>
+                    <div class="point" id="point3">666</div>
                 </li>
-                <li><a href="" class="pictures"> <img id="fenleipic4" src="img/test.png" alt="" onclick="click(4)"> </a>
+                <li><a href="" class="pictures"> <img id="fenleipic4" src="img/test.png" alt="" onclick="into_result(4)"> </a>
                     <!--<img src="img/cang.png" alt="" class="cang" id="cang5">-->
                     <img src="img/zan1.png" alt="" class="zan" id="zan5" onclick="zan(4)">
                     <img src="img/back_btn.png" class="back_btn">
-                    <div class="point">666</div>
+                    <div class="point" id="point4">666</div>
                 </li>
-                <li><a href="" class="pictures"> <img id="fenleipic5" src="img/test.png" alt="" onclick="click(5)"> </a>
+                <li><a href="" class="pictures"> <img id="fenleipic5" src="img/test.png" alt="" onclick="into_result(5)"> </a>
                     <!--<img src="img/cang.png" alt="" class="cang" id="cang6">-->
                     <img src="img/zan1.png" alt="" class="zan" id="zan6" onclick="zan(5)">
                     <img src="img/back_btn.png" class="back_btn">
-                    <div class="point">666</div>
+                    <div class="point" id="point5">666</div>
                 </li>
-                <li><a href="" class="pictures"> <img id="fenleipic6" src="img/test.png" alt="" onclick="click(6)"> </a>
+                <li><a href="" class="pictures"> <img id="fenleipic6" src="img/test.png" alt="" onclick="into_result(6)"> </a>
                     <!--<img src="img/cang.png" alt="" class="cang" id="cang7">-->
                     <img src="img/zan1.png" alt="" class="zan" id="zan7" onclick="zan(6)">
                     <img src="img/back_btn.png" class="back_btn">
-                    <div class="point">666</div>
+                    <div class="point" id="point6">666</div>
                 </li>
-                <li><a href="" class="pictures"> <img id="fenleipic7" src="img/test.png" alt="" onclick="click(7)"> </a>
+                <li><a href="" class="pictures"> <img id="fenleipic7" src="img/test.png" alt="" onclick="into_result(7)"> </a>
                     <!--<img src="img/cang.png" alt="" class="cang" id="cang8">-->
                     <img src="img/zan1.png" alt="" class="zan" id="zan8" onclick="zan(7)">
                     <img src="img/back_btn.png" class="back_btn">
-                    <div class="point">666</div>
+                    <div class="point" id="point7">666</div>
                 </li>
-                <li><a href="" class="pictures"> <img id="fenleipic8" src="img/test.png" alt="" onclick="click(8)"> </a>
+                <li><a href="" class="pictures"> <img id="fenleipic8" src="img/test.png" alt="" onclick="into_result(8)"> </a>
                     <!--<img src="img/cang.png" alt="" class="cang" id="cang9">-->
                     <img src="img/zan1.png" alt="" class="zan" id="zan9" onclick="zan(8)">
                     <img src="img/back_btn.png" class="back_btn">
-                    <div class="point">666</div>
+                    <div class="point" id="point8">666</div>
                 </li>
-                <li><a href="" class="pictures"> <img id="fenleipic9" src="img/test.png" alt="" onclick="click(9)"> </a>
+                <li><a href="" class="pictures"> <img id="fenleipic9" src="img/test.png" alt="" onclick="into_result(9)"> </a>
                     <!--<img src="img/cang.png" alt="" class="cang" id="cang10">-->
                     <img src="img/zan1.png" alt="" class="zan" id="zan10" onclick="zan(9)">
                     <img src="img/back_btn.png" class="back_btn">
-                    <div class="point">666</div>
+                    <div class="point" id="point9">666</div>
                 </li>
-                <li><a href="" class="pictures"> <img id="fenleipic10" src="img/test.png" alt="" onclick="click(10)"> </a>
+                <li><a href="" class="pictures"> <img id="fenleipic10" src="img/test.png" alt="" onclick="into_result(10)"> </a>
                     <!--<img src="img/cang.png" alt="" class="cang" id="cang11">-->
                     <img src="img/zan1.png" alt="" class="zan" id="zan11" onclick="zan(10)">
                     <img src="img/back_btn.png" class="back_btn">
-                    <div class="point">666</div>
+                    <div class="point" id="point10">666</div>
                 </li>
-                <li><a href="" class="pictures"> <img id="fenleipic11" src="img/test.png" alt="" onclick="click(11)"> </a>
+                <li><a href="" class="pictures"> <img id="fenleipic11" src="img/test.png" alt="" onclick="into_result(11)"> </a>
                     <!--<img src="img/cang.png" alt="" class="cang" id="cang12">-->
                     <img src="img/zan1.png" alt="" class="zan" id="zan12" onclick="zan(11)">
                     <img src="img/back_btn.png" class="back_btn">
-                    <div class="point">666</div>
+                    <div class="point" id="point11">666</div>
                 </li>
 
             </ul>
 
         </form>
+        <div class="btns">
+            <div class="btn1">
+                <span onclick="fenlei(1)">1</span>
+            </div>
+            <div class="btn1">
+                <span onclick="fenlei(2)">2</span>
+            </div>
+            <div class="btn1">
+                <span onclick="fenlei(3)">3</span>
+            </div>
+            <div class="btn1">
+                <span onclick="fenlei(4)">4</span>
+            </div>
+            <div class="btn1">
+                <span onclick="fenlei(5)">5</span>
+            </div>
+        </div>
+
     </div>
     <div id="help">
         <div class="logo2">
@@ -218,13 +268,15 @@
             （1） 您可以点击“上传图片”，分享您的图片。<br><br>
             （2） 为您的图片加上标签吧。<br><br></p><br>
         <h4 >联系我们</h4>
+        <div class="houtai" id="houtai"> <span>进入后台</span></div>
     </div>
 </div>
+
 </body>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/login.js"> </script>
 <script type="text/javascript" src="js/nice.js"></script>
-
+<script type="text/javascript" src="js/fenlei.js"></script>
 <script>/*搜索跳转*/
 
 
@@ -240,8 +292,10 @@ else{
     window.location.href ="./result.html?key="+search_text1
 }
 };</script>
-<script>function undo() {
-    alert('未完待续')
-}
+<script>
+    var houtai=document.getElementById('houtai')
+    houtai.onclick=function () {
+        window.location.href ="./manager/main.html"
+    }
 </script>
 </html>
