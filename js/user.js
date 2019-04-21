@@ -33,7 +33,7 @@ upload.onclick=function () {
         $.ajax({
 
             type: 'POST',
-            url: './php/save.php',
+            url: './save.php',
             data: {
                 image:image ,
                 file_name: name,

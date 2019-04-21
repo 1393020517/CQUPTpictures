@@ -58,6 +58,8 @@ function zan(number) {
 
         },
         success:function(data){
+            var zan1=document.getElementById('zan1_'+number).src;
+            zan1.src="./img/zan2.png";
             alert('ok')
 
         },
@@ -99,6 +101,8 @@ function zan1(number) {
 
         },
         success:function(data){
+            var zan=document.getElementById('zan'+number).src;
+            zan.src="./img/zan2.png";
             alert('ok')
 
         },
@@ -211,17 +215,6 @@ function click1(number) {
 
 
 
-for (let i=0;i<12;i++){
-        let zan=document.getElementsByClassName('zan');
-       zan[i].onclick=function () {
-
-           zan[i].src="./img/zan2.png";
-
-
-       }
-
-
-    }
 
 
 
@@ -257,6 +250,8 @@ function result_zan(number) {
 
         },
         success:function(data){
+            var zan1=document.getElementById('zan'+number).src;
+            zan1.src="./img/zan2.png";
             alert('ok')
         },
         error:function(){

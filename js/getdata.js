@@ -32,12 +32,12 @@ $.ajax({
 
         for(i=0;i<12;i++){
             var pic=document.getElementById('pic'+i);
-            pic.src=data[i].src[0]
+            pic.src=data[i].src
         }
 
         for(i=0;i<12;i++){
 
-            var title=data[i].tip[0];
+            var title=data[i].tip;
          $(".point").html(title);
 
         }

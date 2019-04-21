@@ -12,7 +12,7 @@ function start() {
 
 function signclose() {
     document.getElementById('signform').style.display="none";
-    document.getElementById('registerform').style.display="none"
+    // document.getElementById('registerform').style.display="none"
 }
 
 

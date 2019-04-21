@@ -88,6 +88,35 @@ body {
 }
 
 .top_list a:hover {
+    cursor: pointer;
+    color: #1da3f5;
+}
+
+.top_list1 {
+    padding-top: 50px;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.top_list1 li {
+
+
+    display: inline;
+
+    font-size: 20px;
+    padding-right: 24px;
+    padding-left: 24px;
+
+
+}
+
+.top_list1 a {
+
+    color: #04bafb;
+}
+
+.top_list1 a:hover {
+    cursor: pointer;
     color: #1da3f5;
 }
 .login {
