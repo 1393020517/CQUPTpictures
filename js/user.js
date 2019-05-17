@@ -1,209 +1,198 @@
-var image = '';
-function selectImage(file){
-    if(!file.files || !file.files[0]){
-        return;
-    }
-    var reader = new FileReader();
-    reader.onload = function(evt){
-        document.getElementById('image').src = evt.target.result;
-        image = evt.target.result;
-    }
-    reader.readAsDataURL(file.files[0]);
+
+/*用户框*/
+$(function ()
+{
+    $('.change a').click(function ()
+    {
+        $('.signform').animate({height: 'toggle', opacity: 'toggle'}, 'slow');
+    });
+});
+
+function start() {
+    document.getElementById('signform').style.display=""
 }
 
-
-var upload=document.getElementById('upload');
-upload.onclick=function () {
-    /*获取图片名称*/
-    var str;
-    // $('#fil').change(function () {
-
-        str = document.getElementById('fil').value;
-        var arr = str.split('\\');
-        var name = arr[arr.length - 1];
-
-        /*图片标签*/
-        var options = $("#select option:selected");
-        var text = options.val();
-
-
-        /*id*/
-    var url=window.location.href;
-    var datas = url.match(/\?id=(.*)/)[1];
-        $.ajax({
-
-            type: 'POST',
-            url: './save.php',
-            data: {
-                image:image ,
-                file_name: name,
-                title: text,
-                id:datas
-            },
-
-            dataType: 'json',
-            success: function (data) {
-                console.log(data)
-                if (data.status) {
-                    alert('上传成功');
-                }
-                // if (data.status == 'logged') {
-                //     location = "./user.html"
-                //     /*待修改*/
-                // }
-                else {
-                    alert('上传失败');
-                }
-            },
-            error: function (err) {
-                alert('网络故障');
-            }
-        });
-    // });
+function signclose() {
+    document.getElementById('signform').style.display="none";
+    document.getElementById('registerform').style.display="none"
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*上传图片*/
-// $('input[type="file"]').on('change',doUpload);
-// function doUpload() {
-//     var file =this.file[0];
-//     if(!/image\/\w+/.test(file.type)){
-//         alert('文件必须为图片');
-//         return false;
-//     }
-//     var formdata =new FormData($("#upload_pictures")[0]);
-//
-//     $.ajax({
-//         url: '',
-//         type: 'post',
-//         data: formdata,
-//         dataType: 'json',
-//         async: false,
-//         cache:false,
-//         contentType:false,
-//         processData: false,
-//         success:function (data) {
-//             alert('上传成功')
-//         },
-//         error:function (data) {
-//             alert('上传失败')
-//         }
-//     });
-// }
-
-/*上传图片*/
-
-
-
-
-
-
-
-
-window.onload = function() {
-                var container = document.getElementById('container');
-                var list = document.getElementById('list');
-                var buttons = document.getElementById('buttons').getElementsByTagName('span');
-               var prev = document.getElementById('prev');
-                var next = document.getElementById('next');
-                var index = 1;
-                var timer;
-
-                function animate(offset) {
-                        //获取的是style.left，是相对左边获取距离，所以第一张图后style.left都为负值，
-                        //且style.left获取的是字符串，需要用parseInt()取整转化为数字。
-                        var newLeft = parseInt(list.style.left) + offset;
-                        list.style.left = newLeft + 'px';
-                        //无限滚动判断
-                        if (newLeft > -1340) {
-                                list.style.left = -2680 + 'px';
-                             }
-                         if (newLeft < -2680) {
-                                 list.style.left = -1340 + 'px';
-                             }
-    }
-
-                function play() {
-                        //重复执行的定时器
-                        timer = setInterval(function() {
-                                next.onclick();
-                             }, 2000)
-                     }
-
-                function stop() {
-                       clearInterval(timer);
-    }
-
-               function buttonsShow() {
-                        //将之前的小圆点的样式清除
-                        for (var i = 0; i < buttons.length; i++) {
-                                if (buttons[i].className == "on") {
-                                        buttons[i].className = "";
-                                     }
-                             }
-                        //数组从0开始，故index需要-1
-                         buttons[index - 1].className = "on";
-                     }
-
-                prev.onclick = function() {
-                         index -= 1;
-                        if (index < 1) {
-                                index = 5
-                             }
-                        buttonsShow();
-                        animate(1340);
-                     };
-
-                 next.onclick = function() {
-                         //由于上边定时器的作用，index会一直递增下去，我们只有5个小圆点，所以需要做出判断
-                        index += 1;
-                         if (index > 5) {
-                                index = 1
-                             }animate(-1340);
-                        buttonsShow();
-                     };
-
-                 for (var i = 0; i < buttons.length; i++) {
-                         (function(i) {
-                                 buttons[i].onclick = function() {
-
-                                         /*   这里获得鼠标移动到小圆点的位置，用this把index绑定到对象buttons[i]上，去谷歌this的用法  */
-                                        /*   由于这里的index是自定义属性，需要用到getAttribute()这个DOM2级方法，去获取自定义index的属性*/
-                                       var clickIndex = parseInt(this.getAttribute('index'));
-                                        var offset = 1340 * (index - clickIndex); //这个index是当前图片停留时的index
-                                        animate(offset);
-                                         index = clickIndex; //存放鼠标点击后的位置，用于小圆点的正常显示
-                                        buttonsShow();
-                                    }
-        })(i)
-    }
-
-               container.onmouseover = stop;
-                container.onmouseout = play;
-                play();
-
-}
-
-
-
+/*用户框*/
 
 
 /*搜索跳转*/
 
 
-var search_result=document.getElementById('search_result');
+var search_result=document.getElementById('search_btn');
 search_result.onclick=function () {
-    var search_text = document.getElementById('search_result1').value;
-    window.location.href = "./result.html?key=" + search_text
+    var search_text=document.getElementById('search_1').value;
+    if(search_text===''){
+        alert('输入框不能为空');
+        return false;
+    }
+    else{
+
+        var search_text1=document.getElementById('search_1').value;
+        window.location.href ="./result.html?key="+search_text1
+    }
+};
+
+
+// 页面加载
+window.onload=function () {
+
+
+
+    $.ajax({
+        url:"./Php/gettemp.php",/*待修改*/
+        type:"POST",
+        dataType:"json",
+        data:{
+            page:1
+        },
+        success:function (data) {
+            var choose_pics=document.getElementsByClassName('choose_pics');
+
+            for(i=0;i<choose_pics.length;i++){
+                var sort_pic =choose_pics[i];
+                sort_pic.src=data[i].src
+            }
+            var collect_title=document.getElementsByClassName('collect_title');
+            for(i=0;i<collect_title.length;i++){
+                var collecttitle=collect_title[i];
+                collecttitle.innerHTML=data[i].title
+            }
+
+        },
+        error:function () {
+            alert('无法连接服务器')
+        }
+    })
+};
+
+/*图片上传*/
+
+    layui.use('upload', function(){
+        var $ = layui.jquery
+            ,upload = layui.upload;
+        var title=$("#select").find("option:selected").text();
+
+        //拖拽上传
+        upload.render({
+            elem: '#upload'
+            ,url: '/upload/'
+            ,size: 10240
+            ,data:{
+                title:title,
+                src:11,
+            }
+            ,accept: 'images'
+            ,before: function(obj){
+
+                obj.preview(function(index, file, result){
+                    $('#images').attr('src', result); //图片链接（base64）
+
+                });
+
+            }
+            ,done: function(res){
+                console.log(res)
+            }
+        });
+    });
+/*图片上传*/
+
+
+
+
+
+
+
+
+
+/*轮播*/
+layui.use(['carousel', 'form'], function(){
+    var carousel = layui.carousel
+        ,form = layui.form;
+
+    //常规轮播
+    carousel.render({
+        elem: '#carousel'
+        ,arrow: 'hover'
+        ,width: '800px'
+        ,height: '440px'
+        ,anim: 'default'
+    });
+});
+/*轮播*/
+
+
+
+/*收藏分页*/
+layui.use('laypage', function(){
+    var laypage = layui.laypage;
+
+    laypage.render({
+        elem: 'collect_page' //注意，这里的 test1 是 ID，不用加 # 号
+        ,count: 50 //数据总数，从服务端得到
+        ,layout: ['count', 'prev', 'page', 'next', 'refresh', 'skip']
+        ,theme: '#1E9FFF'
+        ,jump: function(obj){
+            //得到当前页，以便向服务端请求对应页的数据。
+            $.ajax({
+                url:"./Php/gettemp.php",/*待修改*/
+                type:"POST",
+                dataType:"json",
+                data:{
+                    page:obj.curr
+                },
+                success:function (data) {
+                    var choose_pics=document.getElementsByClassName('choose_pics');
+
+                    for(i=0;i<choose_pics.length;i++){
+                        var sort_pic =choose_pics[i];
+                        sort_pic.src=data[i].src
+                    }
+                    var collect_title=document.getElementsByClassName('collect_title');
+                    for(i=0;i<collect_title.length;i++){
+                        var collecttitle=collect_title[i];
+                        collecttitle.innerHTML=data[i].title
+                    }
+
+                },
+                error:function () {
+                    alert('无法连接服务器')
+                }
+            })
+
+        }
+    });
+});
+/*收藏分页*/
+
+
+
+// 删除收藏
+
+
+function collect_del(number) {
+    var imgs=document.getElementById('collect_pic'+number).src
+    $.ajax({
+        url:"./Php/gettemp.php",/*待修改*/
+        type:"POST",
+        dataType:"json",
+        data:{
+            del_img:imgs
+        },
+        success:function (data) {
+        if(data.status){
+            alert('删除成功');
+        document.getElementById('collect_pics-'+number).style.display="none"
+        }
+
+
+        },
+        error:function () {
+            alert('无法连接服务器')
+        }
+    })
 }
