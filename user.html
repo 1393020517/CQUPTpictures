@@ -13,11 +13,11 @@
 <div class="top_nav">
     <ul class="layui-nav layui-bg-blue" id="top_nav">
         <li class="layui-nav-item"><a href="./index.html">首页</a></li>
-        <li class="layui-nav-item"><a href="#collect">收藏夹</a></li>
-        <li class="layui-nav-item"><a href="" id="box">收件箱<span class="layui-badge-dot" id="message_remind" style="display: none"></span></a></li>
+        <li class="layui-nav-item"><a href="#collect" id="to_collect">收藏夹</a></li>
+        <li class="layui-nav-item"><a href="javascript:into_box();" id="box">收件箱<span class="layui-badge-dot" id="message_remind" style="display: none"></span></a></li>
         <li class="layui-nav-item"><a href="#help">帮助</a></li>
 
-        <li class="layui-nav-item" id="user_page" ><a ><img src="img/user.png"  alt="" onclick="start()"></a></li>
+        <li class="layui-nav-item" id="user_page" ><a ><img src="img/user.png"  alt="" onclick="information()"></a></li>
     </ul>
 
 </div>
@@ -145,8 +145,10 @@
                 <p>点击上传，或将文件拖拽到此处</p>
                 <p>文件大小小于10MB</p>
             </div>
+            <form class="layui-form" action="" layui-bg-blue>
             <span class="upload_title" >标签:</span>
-            <select  name="标签"  class="select layui-select" id="select">
+            <select  name="标签" lay-verify="required" lay-search="" class="select layui-select " id="select">
+                <option value="">直接选择或搜索选择</option>
                 <option value="校园一角">校园一角</option>
                 <option value="时刻">时刻</option>
                 <option value="动物">动物</option>
@@ -161,7 +163,8 @@
                 <option value="运动">运动</option>
                 <option value="小确幸">小确幸</option>
             </select>
-            <button class="layui-btn layui-btn-normal upload_btn" id="upload_button">确认上传</button>
+            </form>
+            <button class="layui-btn  upload_btn" id="upload_button">确认上传</button>
         </div>
         <div class="layui-col-xs6 present_img">
 
@@ -182,7 +185,7 @@
 
     <div class="collect" id="collect">
 
-        <div class="layui-row layui-col-space10">
+        <div class="layui-row layui-col-space10 collect_div">
             <div class="layui-col-md3">
                 <div class="collect_pictures" id="collect_pics-0"><img src="img/test.jpg" class="choose_pics" id="collect_pic0">
                     <!--<i class="nice_on"></i>-->
@@ -271,9 +274,10 @@
 
 
             </div>
+            <div id="collect_page"></div>
         </div>
 
-        <div id="collect_page"></div>
+
 
 
     </div>
@@ -281,7 +285,9 @@
 
     <!--帮助-->
     <div class="help" id="help">
-        <h1 class="layui-nav-title">帮助</h1>
+        <fieldset class="layui-elem-field layui-field-title">
+            <legend>帮助</legend>
+        </fieldset>
         <div class="layui-collapse" >
             <div class="layui-colla-item">
                 <h2 class="layui-colla-title">用户</h2>
@@ -359,6 +365,63 @@
         </div>
         <div id="inbox_page"></div>
     </div>
+
+<div class="information" id="information" style="display: none">
+
+
+
+
+    <div class="layui-form">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">用户名</label>
+                <div class="layui-input-inline">
+                    <input type="text"  autocomplete="off" class="layui-input" id="name" disabled>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">密码</label>
+                <div class="layui-input-inline">
+                    <input type="text" lay-verify="pass"  autocomplete="off" class="layui-input" id="pwd" disabled>
+                    <div class="layui-form-mid layui-word-aux">请填写6到12位密码</div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">手机</label>
+                <div class="layui-input-inline">
+                    <input type="tel"  lay-verify="required|phone" id="phone" autocomplete="off" class="layui-input" disabled>
+                </div>
+            </div>
+
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">邮箱</label>
+                <div class="layui-input-inline">
+                    <input type="text"  lay-verify="required|email" id="email" autocomplete="off" class="layui-input" disabled>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn layui-btn-normal" id="save_infor">保存</button>
+                <button type="button" class="layui-btn layui-btn-primary" id="change">修改</button>
+            </div>
+        </div>
+    </div>
+
+</div>
 </body>
 
 <script type="text/javascript" src="js/jquery.min.js"></script>

@@ -478,7 +478,7 @@ function sort_click(number) {
 function sort_collect(number) {
     var cookie=getCookie('cookie_name');
     if (cookie===''){
-        alert('请先登录');
+
         document.getElementById('signform').style.display=""
     }
     else{

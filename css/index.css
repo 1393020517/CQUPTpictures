@@ -11,6 +11,14 @@ img {
 li {
     list-style: none
 }
+
+
+
+/*h1*/
+.layui-field-title legend{
+    text-align: center;
+    color: #1da3f5;
+}
 /****************************导航***********************************/
 .top_nav{
 
@@ -242,21 +250,23 @@ li {
 
 /********************精选图片**************************/
 .pictures{
-    padding-top: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
     width: 1100px;
-    height: 570px;
+    height: 460px;
     margin:0 auto ;
+    border-radius: 1em;
+    background: #ffffff;
+margin-bottom: 60px;
 }
-.pictures h1{
-    margin: 0 auto;
-    text-align: center;
-    color: #ffffff;
-}
+
 .layui-col-md3 div{
     background: #ffffff;
     border-radius: 1em;
     height: 180px;
     margin-top: 10px;
+    box-shadow:1px 1.5px 5px #b2b2b2;
 
 
 }
@@ -328,21 +338,18 @@ li {
     background:#1da3f5 ;
     color: #f2f2f2;
 }
+
 /********************精选图片**************************/
 
 
 /**************************分类图片******************/
 .sort_picture{
-    padding-top: 30px;
+    padding-top: 10px;
     width: 1100px;
     height: 700px;
     margin:0 auto ;
 }
-.sort_picture h1{
-    margin: 0 auto;
-    text-align: center;
-    color: #ffffff;
-}
+
 .sort_pic {
     position: relative;
 }
@@ -386,11 +393,7 @@ li {
     margin: 0 auto;
     border: 0;
 }
-.help h1 {
-    color: #f2f2f2;
-   text-align: center;
-    margin-bottom: 20px;
-}
+
 .help div{
     color: #f2f2f2;
 }

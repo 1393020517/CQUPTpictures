@@ -17,7 +17,7 @@
 
         </li>
         <li class="layui-nav-item"><a href="#sort_picture">分类图片</a></li>
-        <li class="layui-nav-item"><a href="./manager/examine.html">后台入口</a></li>
+        <li class="layui-nav-item"><a href="./manager/index.html">后台入口</a></li>
         <li class="layui-nav-item"><a href="#help">帮助</a></li>
         <li class="layui-nav-item" id="login" onclick="start()" ><a ><span >登录</span></a></li>
         <li class="layui-nav-item" id="user_page" style="display: none"><a ><img src="img/user.png"  alt=""></a></li>
@@ -110,8 +110,11 @@
     </div>
 </div>
 <!--精选图片-->
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+    <legend>精选图片</legend>
+</fieldset>
 <div class="pictures" id="pictures">
-    <h1>精选图片</h1>
+
     <div class="layui-row layui-col-space10">
         <div class="layui-col-md3">
         <div class="choose_pic"><img src="img/test.jpg" class="choose_pics" onclick="choose_click(0)" id="choose_pic0">
@@ -188,7 +191,9 @@
 
 <!--分类图片-->
 <div class="sort_picture" id="sort_picture">
-    <h1>分类图片</h1>
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+        <legend>分类图片</legend>
+    </fieldset>
     <div class="layui-row layui-col-space10">
         <div class="layui-col-md3">
             <div class="sort_pic"><img src="img/test.jpg" class="sort_pics" id="sort_pic0" onclick="sort_click(0)">
@@ -290,7 +295,9 @@
 
 <!--帮助-->
 <div class="help" id="help">
-    <h1 class="layui-nav-title">帮助</h1>
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+        <legend>帮助</legend>
+    </fieldset>
     <div class="layui-collapse" >
         <div class="layui-colla-item">
             <h2 class="layui-colla-title">用户</h2>
