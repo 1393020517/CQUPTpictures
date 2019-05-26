@@ -453,7 +453,7 @@ margin: 0 auto;
 
 
 .inbox{
-
+    position: relative;
     width: 1100px;
     height: 680px;
     border-radius: 1em;
@@ -488,6 +488,7 @@ margin: 0 auto;
 /*个人信息*/
 
 .information{
+    position: relative;
     margin: 0 auto;
     background: #ffffff;
     border-radius: 1em;
@@ -500,4 +501,13 @@ margin: 0 auto;
     width: 400px;
     margin: 0 auto;
 
+}
+
+
+
+/*inbox和information的返回*/
+.back{
+    top: 10px;
+    left: 50px;
+position: absolute;
 }

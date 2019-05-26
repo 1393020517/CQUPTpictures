@@ -35,14 +35,14 @@ function delCookie(name){
 /***cookie********/
 
 
-//
-// window.onload=function () {
-//
-//     var cookie=getCookie('cookie_name');
-//     if(cookie==='' || username!==cookie){
-//         location = "./index.html"
-//     }
-// };
+
+window.onload=function () {
+
+    var cookie=getCookie('cookie_name');
+    if(cookie==='' ){
+        location = "./index.html"
+    }
+};
 
 
 
@@ -80,8 +80,7 @@ change_username.onclick =function() {
             },
             success:function(data){
 
-                if (data.status) {/*indexOf("true")>-1*/
-                    // location = "./用户界面.html"/*待修改*/
+                if (data.status) {
                     layer.msg('修改成功', {
                         icon: 1,
                         time: 1000 //2秒关闭（如果不配置，默认是3秒）
@@ -103,7 +102,7 @@ change_username.onclick =function() {
                     }, );
                 }
 
-                /*用户个人地址*/
+
             },
             error:function(){
                 document.getElementById('signform').style.display="none";
@@ -195,13 +194,13 @@ changepwd.onclick =function() {
             },
             success:function(data){
 
-                if (data.status/*indexOf("true")>-1*/) {
+                if (data.status) {
                     document.getElementById('registerform').style.display="none";
                     layer.msg('修改成功', {
                         icon: 1,
                         time: 1000 //2秒关闭（如果不配置，默认是3秒）
                     }, );
-                    /*待修改*/
+
                 }
                 else {
                     document.getElementById('registerform').style.display="none";
@@ -211,7 +210,7 @@ changepwd.onclick =function() {
                     }, );
                 }
 
-                /*用户个人地址*/
+
             },
             error:function(){
                 document.getElementById('registerform').style.display="none";

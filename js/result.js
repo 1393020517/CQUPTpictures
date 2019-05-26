@@ -42,6 +42,7 @@ window.onload=function () {
     var username=getCookie('cookie_name');
         if (username!=='') {
             document.getElementById('login').style.display="none";
+            document.getElementById('user_page').style.display="";
         }
     var url=window.location.href;
     var datas = url.match(/\?key=(.*)/)[1];
@@ -87,6 +88,16 @@ window.onload=function () {
 
 
 
+
+/*登录后的按钮*/
+var displaysign=document.getElementById('user_page');
+displaysign.onclick=function () {
+    window.location.href ="./user.html"
+
+};
+
+
+
 /*登录*/
 
 var turn = document.getElementById('login_btn');
@@ -127,24 +138,12 @@ turn.onclick=function() {
             },
             success:function(data){
 
-                if(data.status==='logged'){
-                    location = "./user.html"/*待修改*/
-                }
-                else if (data.status) {/*indexOf("true")>-1*/
+                if (data.status) {
                     document.getElementById('login').style.display="none";
                     document.getElementById('user_page').style.display="";
                     setCookie('cookie_name',username,3600*2);
-                    location = "./result.html?id="+username/*待修改*/
 
 
-                    /*登陆后进入个人页面*/
-                    // $('#displaysign1').attr('href','./user.html?id='+username);
-                    var displaysign=document.getElementById('user_page');
-                    displaysign.onclick=function () {
-                        var user_id=document.getElementById('user').value;
-                        window.location.href ="./user.html?id="+user_id
-
-                    };
                 }
                 else {
                     document.getElementById('signform').style.display="none";
@@ -459,7 +458,7 @@ changepwd.onclick =function() {
             },
             success:function(data){
 
-                if (data.status/*indexOf("true")>-1*/) {
+                if (data.status) {
                     document.getElementById('registerform').style.display="none";
                     layer.msg('发送成功', {
                         icon: 1,

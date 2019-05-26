@@ -93,24 +93,11 @@ turn.onclick=function() {
             },
             success:function(data){
 
-                if(data.status==='logged'){
-                    location = "./user.html"/*待修改*/
-                }
-                else if (data.status) {/*indexOf("true")>-1*/
+               if (data.status) {
                     document.getElementById('login').style.display="none";
                     document.getElementById('user_page').style.display="";
                     setCookie('cookie_name',username,3600*2);
                     location = "./idnex.html";
-
-
-                    /*登陆后进入个人页面*/
-                    // $('#displaysign1').attr('href','./user.html?id='+username);
-                    // var displaysign=document.getElementById('user_page');
-                    // displaysign.onclick=function () {
-                    //     var user_id=document.getElementById('user').value;
-                    //     window.location.href ="./user.html?id="+user_id
-                    //
-                    // };
                 }
                 else {
                     document.getElementById('signform').style.display="none";
@@ -118,7 +105,6 @@ turn.onclick=function() {
                     alert('验证失败请重新登录')
                 }
 
-                /*用户个人地址*/
             },
             error:function(){
                 document.getElementById('signform').style.display="none";
@@ -186,13 +172,13 @@ changepwd.onclick =function() {
             },
             success:function(data){
 
-                if (data.status/*indexOf("true")>-1*/) {
+                if (data.status) {
                     document.getElementById('registerform').style.display="none";
                     layer.msg('发送成功', {
                         icon: 1,
                         time: 1000 //2秒关闭（如果不配置，默认是3秒）
                     }, );
-                    /*待修改*/
+
                 }
                 else {
                     document.getElementById('registerform').style.display="none";
@@ -202,7 +188,6 @@ changepwd.onclick =function() {
                     }, );
                 }
 
-                /*用户个人地址*/
             },
             error:function(){
                 document.getElementById('registerform').style.display="none";

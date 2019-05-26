@@ -250,7 +250,7 @@ layui.use('laypage', function(){
 
 
 function collect_del(number) {
-    var imgs=document.getElementById('collect_pic'+number).src
+    var imgs=document.getElementById('collect_pic'+number).src;
     $.ajax({
         url:"./Php/gettemp.php",/*待修改*/
         type:"POST",
@@ -404,7 +404,6 @@ document.getElementById('change').onclick=function(){
 
 }
 
-
 function information() {
     document.getElementById('main').style.display="none";
     document.getElementById('inbox').style.display="none";
@@ -546,3 +545,14 @@ function information() {
     }
 
 
+/*返回按钮*/
+function inbox_back() {
+    document.getElementById('main').style.display="";
+    document.getElementById('inbox').style.display="none";
+    document.getElementById('information').style.display="none";
+}
+function information_back() {
+    document.getElementById('main').style.display="";
+    document.getElementById('inbox').style.display="none";
+    document.getElementById('information').style.display="none";
+}

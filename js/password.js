@@ -74,7 +74,7 @@ changepwd.onclick =function() {
                         icon: 1,
                         time: 1000 //2秒关闭（如果不配置，默认是3秒）
                     }, );
-                    /*待修改*/
+
                 }
                 else {
                     document.getElementById('registerform').style.display="none";
@@ -85,7 +85,6 @@ changepwd.onclick =function() {
                     }, );
                 }
 
-                /*用户个人地址*/
             },
             error:function(){
                 document.getElementById('registerform').style.display="none";
