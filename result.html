@@ -38,7 +38,7 @@
     </div>
     <br>
     <div class="change" >
-        <p>忘记密码?<a href="#" >点我</a></p>
+        <p>忘记密码?<a href="#" id="to_identify">点我</a></p>
     </div>
 </div>
 <div class="signform" id="registerform" style="display: none">
@@ -51,7 +51,11 @@
     <div class="pwddiv">
         <input  id="user_name" class="signinput" type="password" placeholder="学号">
     </div>
+     <div class="identify">
+         <input id="identify_number" type="text" placeholder="验证码">
+         <img src="img/flax.jpg"  alt="点我换一张" id="identify_image" onclick="identify()">
 
+     </div>
     <div class="postdiv">
         <input type="submit" value="发送验证" id="to_email">
     </div>
@@ -205,7 +209,9 @@
 
 <!--帮助-->
 <div class="help" id="help">
-    <h1 class="layui-nav-title">帮助</h1>
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>帮助</legend>
+    </fieldset>
     <div class="layui-collapse" >
         <div class="layui-colla-item">
             <h2 class="layui-colla-title">用户</h2>
@@ -227,10 +233,7 @@
             <h2 class="layui-colla-title">BUG反馈</h2>
             <div class="layui-colla-content layui-show">联系我们: QQ: 1393020517 or 1103923008</div>
         </div>
-        <div class="layui-colla-item">
-            <h2 class="layui-colla-title">忘记密码？</h2>
-            <div class="layui-colla-content layui-show">联系我们: QQ: 1393020517 or 1103923008</div>
-        </div>
+
     </div>
 </div>
 

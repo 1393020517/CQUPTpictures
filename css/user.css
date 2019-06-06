@@ -295,7 +295,16 @@ li {
     margin-top: 20px;
     display: block;
     margin-left: 270px;
+
 }
+.layui-select-title{
+    width: 200px;
+    position: absolute;
+    top: -83px;
+    left: 185px;
+}
+
+
 .layui-form{
     margin-top: 20px;
     display: block;
@@ -312,7 +321,7 @@ li {
     margin-right: -120px;
 }
 .upload_title{
-    left: 225px;
+    left: 210px;
     top: 180px;
     position: absolute;
     color: #4d4d4d;
@@ -330,7 +339,7 @@ margin: 0 auto;
 
 }
 .upload_btn{
-    margin-top: 10px;
+    margin-top: -120px;
     margin-left: 120px;
 }
 /*******************图片上传****************/
@@ -495,6 +504,12 @@ margin: 0 auto;
     width: 800px;
     height: 600px;
     margin-top: 50px;
+}
+#information_title{
+    position: absolute;
+    top: 20px;
+    left: 42%;
+
 }
 .layui-form{
     padding-top: 100px;

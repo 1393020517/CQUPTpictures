@@ -17,7 +17,8 @@ li {
 /*h1*/
 .layui-field-title legend{
     text-align: center;
-    color: #1da3f5;
+    color: #4d4d4d;
+    font-weight: bold;
 }
 /****************************导航***********************************/
 .top_nav{
@@ -28,7 +29,7 @@ li {
 }
 
 #top_nav{
-    width: 600px;
+    width: 480px;
     margin: 0 auto;
 }
 .layui-nav-item{
@@ -140,6 +141,39 @@ li {
 
 /**********************************登录**************************/
 
+
+/*********验证码************/
+.identify{
+    margin: 0 auto;
+    height: 40px;
+    width: 280px;
+    margin-top: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+.identify img{
+    top: -5px;
+    position: absolute;
+    right: 20px;
+    width: 120px;
+    height:60px;
+    margin: 0 auto;
+}
+.identify img:hover{
+    cursor: pointer;
+}
+#identify_number{
+    position: absolute;
+    left: 0;
+    top: 8px;
+    text-align: center;
+    border-radius: 0.2em;
+    width: 120px;
+    height: 30px;
+    border: none;
+    background-color:#f2f2f2;
+    font-size: 18px;
+}
 
 
 /**********************logo**************/
@@ -387,7 +421,12 @@ margin-bottom: 60px;
 
 
 /*************************帮助*****************************/
+.layui-show{
+
+
+}
 .help{
+
     padding-bottom: 20px;
     width: 500px;
     margin: 0 auto;
@@ -396,4 +435,7 @@ margin-bottom: 60px;
 
 .help div{
     color: #f2f2f2;
+}
+#manager{
+    color: #ffffff;
 }

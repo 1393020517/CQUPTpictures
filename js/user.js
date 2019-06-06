@@ -448,6 +448,7 @@ function information() {
 
 
     document.getElementById('save_infor').onclick=function () {
+
         var email = document.getElementById("email").value;
         var name = document.getElementById("user_name").value;
         var pwd = document.getElementById("email").value;
@@ -523,7 +524,14 @@ function information() {
                    document.getElementById('pwd').value=data.pwd;
                    document.getElementById('phone').value=data.phone;
                    document.getElementById('email').value=data.email;
-
+                   document.getElementById('name').setAttribute('disabled','true');
+                   document.getElementById('pwd').setAttribute('disabled','true');
+                   document.getElementById('phone').setAttribute('disabled','true');
+                   document.getElementById('email').setAttribute('disabled','true');
+                   layer.msg('保存成功', {
+                       icon: 1,
+                       time: 1000 //2秒关闭（如果不配置，默认是3秒）
+                   }, );
                }
 
             },

@@ -36,14 +36,14 @@ function delCookie(name){
 
 
 
-window.onload=function () {
-
-    var cookie=getCookie('cookie_name');
-    if(cookie==='' ){
-        location = "./index.html"
-    }
-};
-
+// window.onload=function () {
+//
+//     var cookie=getCookie('cookie_name');
+//     if(cookie==='' ){
+//         location = "./index.html"
+//     }
+// };
+//
 
 
 
