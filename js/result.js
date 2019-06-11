@@ -178,74 +178,72 @@ turn.onclick=function() {
 /*验证码首次刷新*/
 
 
-document.getElementById('to_identify').onclick=function () {
-    $.ajax({
-        url:"./Php/gettemp.php",/*待修改*/
-        type:"POST",
-        dataType:"json",
-        data:{
-
-        },
-        success:function (data) {
-            if(data.status){
-                var identify_imgs=document.getElementById('identify_image');
-                identify_imgs.src=data.img;
-            }
-
-        },
-        error:function () {
-            layer.open({
-                type: 1
-                ,content: '<div style="width: 100px;height: 50px;margin: 0 auto;padding-top: 30px">'+ '无法连接服务器' +'</div>'
-                ,btn: '关闭'
-                ,offset: '100px'
-                ,btnAlign: 'c' //按钮居中
-                ,area: ['220px', ]
-                ,shade: 0 //不显示遮罩
-                ,yes: function(){
-                    layer.closeAll();
-                }
-            });
-        }
-    });
-}
+// document.getElementById('to_identify').onclick=function () {
+//     $.ajax({
+//         url:"./Php/gettemp.php",/*待修改*/
+//         type:"POST",
+//         dataType:"json",
+//         data:{
+//
+//         },
+//         success:function (data) {
+//             if(data.status){
+//                 var identify_imgs=document.getElementById('identify_image');
+//                 identify_imgs.src=data.img;
+//             }
+//
+//         },
+//         error:function () {
+//             layer.open({
+//                 type: 1
+//                 ,content: '<div style="width: 100px;height: 50px;margin: 0 auto;padding-top: 30px">'+ '无法连接服务器' +'</div>'
+//                 ,btn: '关闭'
+//                 ,offset: '100px'
+//                 ,btnAlign: 'c' //按钮居中
+//                 ,area: ['220px', ]
+//                 ,shade: 0 //不显示遮罩
+//                 ,yes: function(){
+//                     layer.closeAll();
+//                 }
+//             });
+//         }
+//     });
+// }
 
 /*验证码*/
 
-function identify(){
-    $.ajax({
-        url:"./Php/gettemp.php",/*待修改*/
-        type:"POST",
-        dataType:"json",
-        data:{
-
-        },
-        success:function (data) {
-            if(data.status){
-                var identify_imgs=document.getElementById('identify_image');
-                identify_imgs.src=data.img;
-            }
-
-        },
-        error:function () {
-            layer.open({
-                type: 1
-                ,content: '<div style="width: 100px;height: 50px;margin: 0 auto;padding-top: 30px">'+ '无法连接服务器' +'</div>'
-                ,btn: '关闭'
-                ,offset: '100px'
-                ,btnAlign: 'c' //按钮居中
-                ,area: ['220px', ]
-                ,shade: 0 //不显示遮罩
-                ,yes: function(){
-                    layer.closeAll();
-                }
-            });
-        }
-    });
-
-}
-
-
+// function identify(){
+//     $.ajax({
+//         url:"./Php/gettemp.php",/*待修改*/
+//         type:"POST",
+//         dataType:"json",
+//         data:{
+//
+//         },
+//         success:function (data) {
+//             if(data.status){
+//                 var identify_imgs=document.getElementById('identify_image');
+//                 identify_imgs.src=data.img;
+//             }
+//
+//         },
+//         error:function () {
+//             layer.open({
+//                 type: 1
+//                 ,content: '<div style="width: 100px;height: 50px;margin: 0 auto;padding-top: 30px">'+ '无法连接服务器' +'</div>'
+//                 ,btn: '关闭'
+//                 ,offset: '100px'
+//                 ,btnAlign: 'c' //按钮居中
+//                 ,area: ['220px', ]
+//                 ,shade: 0 //不显示遮罩
+//                 ,yes: function(){
+//                     layer.closeAll();
+//                 }
+//             });
+//         }
+//     });
+//
+// }
 
 
 

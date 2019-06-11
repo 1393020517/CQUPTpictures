@@ -5,6 +5,11 @@ document.getElementById('to_collect').onclick=function(){
     document.getElementById('information').style.display="none";
     document.getElementById('inbox').style.display="none";
 };
+document.getElementById('to_help').onclick=function(){
+    document.getElementById('main').style.display="";
+    document.getElementById('information').style.display="none";
+    document.getElementById('inbox').style.display="none";
+};
 
 
 

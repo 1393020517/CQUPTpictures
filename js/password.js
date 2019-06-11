@@ -14,6 +14,7 @@ changepwd.onclick =function() {
     var registername = document.getElementById("user_name").value;
     var pwd =document.getElementById("pwd").value;
     var new_pwd =document.getElementById("new_pwd").value;
+    var identify_number=document.getElementById("identify").value;
     if (registername ===''){
         layer.msg('学号不能为空', {
             icon: 2,
@@ -51,6 +52,13 @@ changepwd.onclick =function() {
         }, );
         return false;
     }
+    if(identify_number === ''){
+        layer.msg('验证码不能为空', {
+            icon: 2,
+            time: 1000 //2秒关闭（如果不配置，默认是3秒）
+        }, );
+        return false;
+    }
     else {
         $.ajax({
             url:"./php/index2.php",/*待修改*/
@@ -60,6 +68,7 @@ changepwd.onclick =function() {
                 email:email,
                 id:registername,
                 newpwd:formpwd,
+                identify:identify_number,
 
             },
             xhrFields: {
@@ -76,8 +85,13 @@ changepwd.onclick =function() {
                     }, );
 
                 }
+                if(data.status=='identify'){
+                    layer.msg('验证码错误', {
+                        icon: 2,
+                        time: 1000 //2秒关闭（如果不配置，默认是3秒）
+                    }, );
+                }
                 else {
-                    document.getElementById('registerform').style.display="none";
 
                     layer.msg('验证失败请重新登录', {
                         icon: 2,
@@ -110,7 +124,7 @@ changepwd.onclick =function() {
 
 
 
-var go=document.getElementById('gotoindex');
-go.onclick=function () {
-    window.location.href ="./index.html"
-}
+// var go=document.getElementById('gotoindex');
+// go.onclick=function () {
+//     window.location.href ="./index.html"
+// }
