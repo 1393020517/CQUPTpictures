@@ -311,7 +311,11 @@ margin-bottom: 60px;
     margin-left: 8px;
 }
 .choose_pic {
-    position: relative;
+     position: relative;
+ }
+.choose_pics {
+    width: 250px;
+    height: 142px;
 }
 .nice_on{
     display: inline-block;
@@ -404,6 +408,10 @@ margin-bottom: 60px;
     background: #ffffff;
     text-align: center;
     border-radius: 1em;
+}
+.sort_pics{
+    width: 250px;
+    height: 142px;
 }
 .sort_pics:hover{
     cursor: pointer;

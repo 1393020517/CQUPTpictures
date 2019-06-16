@@ -48,12 +48,12 @@ window.onload=function () {
     var datas = url.match(/\?key=(.*)/)[1];
 
     $.ajax({
-        url:"./Php/gettemp.php",/*待修改*/
+        url:"./php/search.php",/*待修改*/
         type:"POST",
         dataType:"json",
         data:{
             page:1,
-            title:datas
+            text:datas
         },
         success:function (data) {
             var sort_pics=document.getElementsByClassName('sort_pics');
@@ -142,7 +142,7 @@ turn.onclick=function() {
                     document.getElementById('login').style.display="none";
                     document.getElementById('user_page').style.display="";
                     setCookie('cookie_name',username,3600*2);
-
+                    document.getElementById('signform').style.display="none";
 
                 }
                 else {
@@ -289,12 +289,12 @@ layui.use('laypage', function(){
         ,jump: function(obj, first){
             //得到当前页，以便向服务端请求对应页的数据。
             $.ajax({
-                url:"./Php/gettemp.php",/*待修改*/
+                url:"./php/search.php",/*待修改*/
                 type:"POST",
                 dataType:"json",
                 data:{
                     page:obj.curr,
-                    title:datas
+                    text:datas
                 },
                 success:function (data) {
                     var sort_pics=document.getElementsByClassName('sort_pics');
@@ -440,11 +440,11 @@ function result_collect(number) {
     else{
         var pic=document.getElementById('result_pic'+number).src;
         $.ajax({
-            url:"./php/thumb-up.php",/*待修改*/
+            url:"./php/favorite.php",/*待修改*/
             type:"POST",
             dataType:"json",
             data:{
-                cang:pic,
+                fav:pic,
 
             },
             success:function(data){
@@ -513,7 +513,7 @@ changepwd.onclick =function() {
     }
     else {
         $.ajax({
-            url:"./php/index2.php",/*待修改*/
+            url:"./php/index4.php",/*待修改*/
             type:"POST",
             dataType:"json",
             data:{

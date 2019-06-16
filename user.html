@@ -119,11 +119,11 @@
 
     <div class="layui-carousel" id="carousel" >
         <div carousel-item="" class="carousel_pics">
-            <img src="img/test1.jpg" alt="">
-            <img src="img/test2.jpg" alt="">
-            <img src="img/test3.jpg" alt="">
-            <img src="img/test5.jpg" alt="">
-            <img src="img/test6.jpg" alt="">
+            <img src="img/test1.jpg" alt="" class="carousel_pic">
+            <img src="img/test2.jpg" alt="" class="carousel_pic">
+            <img src="img/test3.jpg" alt="" class="carousel_pic">
+            <img src="img/test5.jpg" alt="" class="carousel_pic">
+            <img src="img/test6.jpg" alt="" class="carousel_pic">
         </div>
     </div>
 
@@ -144,6 +144,7 @@
                 <i class="layui-icon "></i>
                 <p>点击上传，或将文件拖拽到此处</p>
                 <p>文件大小小于10MB</p>
+                <p>文件格式为jpg</p>
             </div>
             <form class="layui-form" action="" layui-bg-blue>
             <span class="upload_title" >标签:</span>
@@ -371,7 +372,7 @@
         <legend>个人信息</legend>
     </fieldset>
 
-    <div class="layui-form">
+    <div class="layui-form" id="information1">
 
         <div class="layui-form-item">
             <div class="layui-inline">
@@ -383,26 +384,22 @@
             </div>
 
         </div>
-        <div class="layui-form-item">
+
+        <div class="layui-form-item" id="password">
             <div class="layui-inline">
                 <label class="layui-form-label">密码</label>
                 <div class="layui-input-inline">
-                    <input type="text" lay-verify="pass"  autocomplete="off" class="layui-input" id="pwd" disabled>
+
+                    <input type="password" lay-verify="pass"  autocomplete="off" class="layui-input" id="pwd" disabled>
+                    <span class="change_password" id="change_password">修改密码</span>
                     <div class="layui-form-mid layui-word-aux">请填写6到12位密码</div>
                 </div>
             </div>
 
 
         </div>
-        <div class="layui-form-item">
-            <div class="layui-inline">
-                <label class="layui-form-label">手机</label>
-                <div class="layui-input-inline">
-                    <input type="tel"  lay-verify="required|phone" id="phone" autocomplete="off" class="layui-input" disabled>
-                </div>
-            </div>
 
-        </div>
+
         <div class="layui-form-item">
             <div class="layui-inline">
                 <label class="layui-form-label">邮箱</label>
@@ -422,6 +419,34 @@
         </div>
     </div>
 
+    <div class="layui-form" id="information2" style="display: none">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label" id="form_password">原密码</label>
+                <div class="layui-input-inline">
+
+                    <input type="text" lay-verify="pass"  autocomplete="off" class="layui-input" id="form_pwd" >
+
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item" id="new_password">
+            <div class="layui-inline">
+                <label class="layui-form-label">新密码</label>
+                <div class="layui-input-inline">
+
+                    <input type="text" lay-verify="pass"  autocomplete="off" class="layui-input" id="new_pwd" >
+
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn layui-btn-normal" id="save_pwd">保存</button>
+
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 

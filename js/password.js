@@ -36,13 +36,13 @@ changepwd.onclick =function() {
         }, );
         return false;
     }
-    if(email === ''){
-        layer.msg('邮箱不能为空', {
-            icon: 2,
-            time: 1000 //2秒关闭（如果不配置，默认是3秒）
-        }, );
-        return false;
-    }
+    // if(email === ''){
+    //     layer.msg('邮箱不能为空', {
+    //         icon: 2,
+    //         time: 1000 //2秒关闭（如果不配置，默认是3秒）
+    //     }, );
+    //     return false;
+    // }
     if(pwd !== new_pwd) {
         document.getElementById('registerpwd').value="";
         document.getElementById('registerrepwd').value="";
@@ -61,13 +61,13 @@ changepwd.onclick =function() {
     }
     else {
         $.ajax({
-            url:"./php/index2.php",/*待修改*/
+            url:"./php/index4.php",/*待修改*/
             type:"POST",
             dataType:"json",
             data:{
-                email:email,
+                // email:email,
                 id:registername,
-                newpwd:formpwd,
+                newpwd:new_pwd,
                 identify:identify_number,
 
             },
@@ -85,8 +85,16 @@ changepwd.onclick =function() {
                     }, );
 
                 }
-                if(data.status=='identify'){
+                if(data.status==300){
+
                     layer.msg('验证码错误', {
+                        icon: 2,
+                        time: 1000 //2秒关闭（如果不配置，默认是3秒）
+                    }, );
+                }
+                if(data.status==400){
+
+                    layer.msg('验证码超时', {
                         icon: 2,
                         time: 1000 //2秒关闭（如果不配置，默认是3秒）
                     }, );

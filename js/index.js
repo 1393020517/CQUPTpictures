@@ -147,13 +147,12 @@ window.onload=function(){
 
     /*分类图片*/
     $.ajax({
-        url:"./Php/gettemp.php",/*待修改*/
+        url:"./php/get_classified.php",/*待修改*/
         type:"POST",
         dataType:"json",
-        data:{
 
-        },
         success:function (data) {
+            console.log(data)
             var sort_pics=document.getElementsByClassName('sort_pics');
 
             for(i=0;i<sort_pics.length;i++){
@@ -190,7 +189,7 @@ window.onload=function(){
 
 
     $.ajax({
-        url:"./Php/gettemp.php",/*待修改*/
+        url:"./php/get_choiceness.php",/*待修改*/
         type:"POST",
         dataType:"json",
         data:{
@@ -198,7 +197,7 @@ window.onload=function(){
         },
         success:function (data) {
             var pictures=document.getElementsByClassName('choose_pics');
-
+            // console.log(data)
             for(i=0;i<pictures.length;i++){
                 var picture=pictures[i];
                 picture.src=data[i].src
@@ -244,20 +243,21 @@ layui.use('laypage', function(){
         ,jump: function(obj){
              //得到当前页，以便向服务端请求对应页的数据。
             $.ajax({
-                url:"./Php/gettemp.php",/*待修改*/
+                url:"./php/get_choiceness.php",/*待修改*/
                 type:"POST",
                 dataType:"json",
                 data:{
                     page:obj.curr
                 },
                 success:function (data) {
-                    var sort_pics=document.getElementsByClassName('sort_pics');
+                    // console.log(data)
+                    var sort_pics=document.getElementsByClassName('choose_pics');
 
                     for(i=0;i<sort_pics.length;i++){
                         var sort_pic =sort_pics[i];
                         sort_pic.src=data[i].src
                     }
-                    var sort_title=document.getElementsByClassName('sort_title');
+                    var sort_title=document.getElementsByClassName('chose_title');
                     for(i=0;i<sort_title.length;i++){
                         var sorttitle=sort_title[i];
                         sorttitle.innerHTML=data[i].title

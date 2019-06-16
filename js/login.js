@@ -97,7 +97,7 @@ turn.onclick=function() {
                     document.getElementById('login').style.display="none";
                     document.getElementById('user_page').style.display="";
                     setCookie('cookie_name',username,3600*2);
-                    location = "./idnex.html";
+                    location = "./index.html";
                 }
                 else {
                     document.getElementById('signform').style.display="none";
