@@ -380,11 +380,6 @@ margin: 0 auto;
     box-shadow:1px 1.5px 5px #b2b2b2;
     position: relative;
 }
-
-.choose_pics{
-    width: 250px;
-    height: 142px;
-}
 .collect_title{
     text-align: center;
     border-radius: 5px;
@@ -530,16 +525,4 @@ margin: 0 auto;
     top: 10px;
     left: 50px;
 position: absolute;
-}
-
-.change_password{
-    position: absolute;
-    top: 8px;
-    right:-60px;
-    color: #1da3f5;
-}
-.change_password:hover{
-    cursor: pointer;
-    color: #2D93CA;
-
 }

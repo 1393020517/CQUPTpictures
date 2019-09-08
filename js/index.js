@@ -147,7 +147,7 @@ window.onload=function(){
 
     /*分类图片*/
     $.ajax({
-        url:"./php/get_classified.php",/*待修改*/
+        url:"/Home/Server/index2",/*待修改*/
         type:"POST",
         dataType:"json",
 
@@ -189,7 +189,7 @@ window.onload=function(){
 
 
     $.ajax({
-        url:"./php/get_choiceness.php",/*待修改*/
+        url:"/Home/Server/index1",/*待修改*/
         type:"POST",
         dataType:"json",
         data:{
@@ -243,7 +243,7 @@ layui.use('laypage', function(){
         ,jump: function(obj){
              //得到当前页，以便向服务端请求对应页的数据。
             $.ajax({
-                url:"./php/get_choiceness.php",/*待修改*/
+                url:"/Home/Server/index1",/*待修改*/
                 type:"POST",
                 dataType:"json",
                 data:{
@@ -312,11 +312,11 @@ search_result.onclick=function () {
 function choose_nice(number) {
     var pic=document.getElementById('choose_nice'+number).src;
     $.ajax({
-        url:"./php/thumb-up.php",/*待修改*/
+        url:"/Home/Client/like",/*待修改*/
         type:"POST",
         dataType:"json",
         data:{
-            zan:pic,
+            path:pic,
 
         },
         success:function(data){
@@ -358,11 +358,11 @@ function choose_nice(number) {
 function choose_click(number) {
     var pic=document.getElementById('choose_pic'+number).src;
     $.ajax({
-        url:"./php/click.php",/*待修改*/
+        url:"/Home/Client/click",/*待修改*/
         type:"POST",
         dataType:"json",
         data:{
-            click:pic,
+            path:pic,
 
         },
         success:function(data){
@@ -407,11 +407,11 @@ function choose_collect(number) {
     else{
         var pic=document.getElementById('choose_pic'+number).src;
         $.ajax({
-            url:"./php/thumb-up.php",/*待修改*/
+            url:"/Home/Client/favorite",/*待修改*/
             type:"POST",
             dataType:"json",
             data:{
-                cang:pic,
+                path:pic,
 
             },
             success:function(data){
@@ -456,11 +456,11 @@ function choose_collect(number) {
 function sort_nice(number) {
     var pic=document.getElementById('sort_pic'+number).src;
     $.ajax({
-        url:"./php/thumb-up.php",/*待修改*/
+        url:"/Home/Client/like",/*待修改*/
         type:"POST",
         dataType:"json",
         data:{
-            zan:pic,
+            path:pic,
 
         },
         success:function(data){
@@ -501,11 +501,11 @@ function sort_nice(number) {
 function sort_click(number) {
     var pic=document.getElementById('sort_pic'+number).src;
     $.ajax({
-        url:"./php/click.php",/*待修改*/
+        url:"/Home/Server/index3",/*待修改*/
         type:"POST",
         dataType:"json",
         data:{
-            click:pic,
+            path:pic,
 
         },
         success:function(data){
@@ -554,11 +554,11 @@ function sort_collect(number) {
 
         var pic=document.getElementById('sort_pic'+number).src;
         $.ajax({
-            url:"./php/thumb-up.php",/*待修改*/
+            url:"/Home/Client/favorite",/*待修改*/
             type:"POST",
             dataType:"json",
             data:{
-                cang:pic,
+                path:pic,
 
             },
             success:function(data){

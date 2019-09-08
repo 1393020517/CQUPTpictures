@@ -76,8 +76,8 @@ layui.use('laypage', function(){
         ,jump: function(obj){
             //得到当前页，以便向服务端请求对应页的数据。
             $.ajax({
-                url:"./Php/gettemp.php",/*待修改*/
-                type:"POST",
+                url:"/Admin/Server/getTemp",/*待修改*/
+                type:"GET",
                 dataType:"json",
                 data:{
                     page:obj.curr
@@ -87,7 +87,7 @@ layui.use('laypage', function(){
 
                     for(i=0;i<examine_pictures.length;i++){
                         var examine_picture =examine_pictures[i];
-                        examine_picture.src=data[i].src
+                        examine_picture.src=data[i].path
                     }
                     var examine_titles=document.getElementsByClassName('examine_title');
                     for(i=0;i<examine_titles.length;i++){
@@ -120,13 +120,13 @@ layui.use('laypage', function(){
 /*审核通过*/
 function pass(number) {
     var pass_img=document.getElementsByClassName('examine_picture')[number];
-
+    var pass_img_label=document.getElementsByClassName('examine_title')[number];
     $.ajax({
-        url:"./Php/gettemp.php",/*待修改*/
+        url:"/Admin/Client/passTemp",/*待修改*/
         type:"POST",
         dataType:"json",
         data:{
-
+            label:pass_img_label,
             src:pass_img.src
         },
         success:function (data) {
@@ -168,12 +168,12 @@ function unpass(number){
         var unpass_img=document.getElementsByClassName('examine_picture')[number];
 
         $.ajax({
-            url:"./Php/gettemp.php",/*待修改*/
+            url:"/Admin/Client/deleteTemp",/*待修改*/
             type:"POST",
             dataType:"json",
             data:{
-                reason:value
-                ,src:unpass_img.src
+                feedback:value
+                ,path:unpass_img.src
             },
             success:function (data) {
                 var unpass_img_div=document.getElementsByClassName('examine_pictures')[number];
@@ -221,7 +221,7 @@ layui.use('laypage', function(){
         ,jump: function(obj){
             //得到当前页，以便向服务端请求对应页的数据。
             $.ajax({
-                url:"./Php/gettemp.php",/*待修改*/
+                url:"/Admin/Server/getFormal",/*待修改*/
                 type:"POST",
                 dataType:"json",
                 data:{
@@ -232,7 +232,7 @@ layui.use('laypage', function(){
 
                     for(i=0;i<manager_pictures.length;i++){
                         var manager_picture =manager_pictures[i];
-                        manager_picture.src=data[i].src
+                        manager_picture.src=data[i].path
                     }
                     var manager_titles=document.getElementsByClassName('manager_title');
                     for(i=0;i<manager_titles.length;i++){
@@ -242,7 +242,7 @@ layui.use('laypage', function(){
                     var nice_pictures=document.getElementsByClassName('manager_nice');
                     for(i=0;i<nice_pictures.length;i++){
                         var nice_picture=nice_pictures[i];
-                        nice_picture.innerHTML=data[i].nice
+                        nice_picture.innerHTML=data[i].like
                     }
                     var click_pictures=document.getElementsByClassName('manager_click');
                     for(i=0;i<click_pictures.length;i++){
@@ -276,11 +276,11 @@ layui.use('laypage', function(){
 function manager_del(number) {
     var del_img=document.getElementsByClassName('manager_picture')[number];
     $.ajax({
-        url:"./Php/gettemp.php",/*待修改*/
+        url:"/Admin/Client/deleteFormal",/*待修改*/
         type:"POST",
         dataType:"json",
         data:{
-            image:del_img.src
+            path:del_img.src
         },
         success:function (data) {
             if(data.status){
@@ -322,7 +322,8 @@ layui.use('table', function(){
 
     table.render({
         elem: '#user_table'
-        ,url:'/'
+        ,url:'/Admin/Server/getUser'
+        ,method:'GET'
         ,height: 600
         ,width:900
         ,page: { //jump/elem 不能传入

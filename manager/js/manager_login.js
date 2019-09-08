@@ -58,12 +58,12 @@ turn.onclick=function() {
     else {
         $.ajax({
 
-            url:"./php/index1.php",/*待修改*/
+            url:"/Admin/Client/login",/*待修改*/
             type:"POST",
             dataType:"json",
             data:{
                 id:username,
-                pwd:userpwd
+                password:userpwd
             },
 
             success:function(data){

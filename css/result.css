@@ -212,10 +212,6 @@ li {
 .search_pictures{
     position: relative;
 }
-.sort_pics{
-    width: 250px;
-    height: 142px;
-}
 .search_title{
     text-align: center;
     border-radius: 5px;

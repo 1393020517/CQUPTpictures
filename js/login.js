@@ -81,12 +81,12 @@ turn.onclick=function() {
     else {
         $.ajax({
 
-            url:"./php/index1.php",/*待修改*/
+            url:"/Home/Client/login",/*待修改*/
             type:"POST",
             dataType:"json",
             data:{
-                id:username,
-                pwd:userpwd
+                ID:username,
+                password:userpwd
             },
             xhrFields: {
                 withCredentials: true
@@ -160,11 +160,11 @@ changepwd.onclick =function() {
     }
     else {
         $.ajax({
-            url:"./php/index2.php",/*待修改*/
+            url:"/Home/Client/send_email",/*待修改*/
             type:"POST",
             dataType:"json",
             data:{
-                id:user_name,
+                ID:user_name,
                 email:email,
             },
             xhrFields: {

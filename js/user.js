@@ -1,4 +1,17 @@
 
+
+window.onload=function () {
+
+    var cookie=getCookie('cookie_name');
+    if(cookie==='' ){
+        location = "./index.html"
+    }
+};
+
+
+
+
+
 /*导航栏*/
 document.getElementById('to_collect').onclick=function(){
     document.getElementById('main').style.display="";
@@ -64,8 +77,8 @@ window.onload=function () {
 
 
     $.ajax({
-        url:"./php/get_favorite.php",/*待修改*/
-        type:"POST",
+        url:"/Home/ Server/user_favorite",/*待修改*/
+        type:"GET",
         dataType:"json",
         data:{
             page:1
@@ -100,6 +113,42 @@ window.onload=function () {
         }
     });
 
+
+
+    /*加载轮播*/
+    $.ajax({
+        url:"/Home/Server/user_player",/*待修改*/
+        type:"GET",
+        dataType:"json",
+        data:{
+
+        },
+        success:function (data) {
+            var carousel_img=document.getElementsByClassName('carousel_img');
+
+            for(i=0;i<carousel_img.length;i++){
+                var carousel_pic =carousel_img[i];
+                carousel_pic.src=data[i].src
+            }
+
+        },
+        error:function () {
+            layer.open({
+                type: 1
+                ,content: '<div style="width: 100px;height: 50px;margin: 0 auto;padding-top: 30px">'+ '无法连接服务器' +'</div>'
+                ,btn: '关闭'
+                ,offset: '100px'
+                ,btnAlign: 'c' //按钮居中
+                ,area: ['220px', ]
+                ,shade: 0 //不显示遮罩
+                ,yes: function(){
+                    layer.closeAll();
+                }
+            });
+        }
+    });
+
+
 /*消息提醒*/
     $.ajax({
         url:"./php/message.php",/*待修改*/
@@ -131,52 +180,6 @@ window.onload=function () {
             });
         }
     })
-
-
-
-
-    /*加载轮播*/
-    $.ajax({
-        url:"./Php/gettemp.php",/*待修改*/
-        type:"POST",
-        dataType:"json",
-        data:{
-
-        },
-        success:function (data) {
-            if(data.status){
-                var carousel_pic=document.getElementsByClassName('carousel_pic');
-
-                for(i=0;i<carousel_pic.length;i++){
-                    var carousel =carousel_pic[i];
-                    carousel.src=data[i].src
-                }
-            }
-            else{
-
-            }
-        },
-        error:function () {
-            layer.open({
-                type: 1
-                ,content: '<div style="width: 100px;height: 50px;margin: 0 auto;padding-top: 30px">'+ '无法连接服务器' +'</div>'
-                ,btn: '关闭'
-                ,offset: '100px'
-                ,btnAlign: 'c' //按钮居中
-                ,area: ['220px', ]
-                ,shade: 0 //不显示遮罩
-                ,yes: function(){
-                    layer.closeAll();
-                }
-            });
-        }
-    })
-
-
-
-
-
-
 };
 
 
@@ -192,9 +195,8 @@ window.onload=function () {
         //拖拽上传
         upload.render({
             elem: '#upload'
-            ,url: './uploading.php'
+            ,url: '/Home/Client/upload'
             ,size: 10240
-            ,acceptMime:'image/jpg'
 
             ,auto:false
             ,bindAction:'#upload_button'
@@ -209,7 +211,7 @@ window.onload=function () {
             }
             ,data:{
                 file:$("#images").src,
-                title:title
+                label:title
 
             }
 
@@ -258,7 +260,7 @@ layui.use('laypage', function(){
         ,jump: function(obj){
             //得到当前页，以便向服务端请求对应页的数据。
             $.ajax({
-                url:"./php/get_favorite.php",/*待修改*/
+                url:"/Home/ Server/user_favorite",/*待修改*/
                 type:"POST",
                 dataType:"json",
                 data:{
@@ -307,7 +309,7 @@ layui.use('laypage', function(){
 function collect_del(number) {
     var imgs=document.getElementById('collect_pic'+number).src;
     $.ajax({
-        url:"./php/delete_favorite.php",/*待修改*/
+        url:"/Home/Client/delete_favorite",/*待修改*/
         type:"POST",
         dataType:"json",
         data:{
@@ -361,16 +363,16 @@ function into_box() {
             ,jump: function(obj){
                 //得到当前页，以便向服务端请求对应页的数据。
                 $.ajax({
-                    url:"./php/get_feedback.php",/*待修改*/
-                    type:"POST",
+                    url:"/Home/Server/get_feedback",/*待修改*/
+                    type:"GET",
                     dataType:"json",
                     data:{
                         page:obj.curr
                     },
                     success:function (data) {
                         for(i=0;i<data.length;i++){
-                            // document.getElementById('message_title'+i).innerText=data[i].title;
-                            document.getElementById('message_text'+i).innerText=data[i].reason;
+                            document.getElementById('message_title'+i).innerText=data[i].title;
+                            document.getElementById('message_text'+i).innerText=data[i].content;
                             document.getElementById('message_img'+i).src=data[i].src;
                         }
 
@@ -415,11 +417,11 @@ function into_box() {
 function delmessage(number) {
     var message_img=document.getElementById('message_img'+number);
     $.ajax({
-        url:"./php/delete_feedback.php",/*待修改*/
+        url:"/Home/Client/delete_feedback_photo",/*待修改*/
         type:"POST",
         dataType:"json",
         data:{
-           src:message_img,
+           path:message_img,
         },
         success:function (data) {
             layer.msg('删除成功', {
@@ -454,10 +456,10 @@ function delmessage(number) {
 document.getElementById('change').onclick=function(){
     document.getElementById('name').removeAttribute('disabled');
     document.getElementById('pwd').removeAttribute('disabled');
-
+    document.getElementById('phone').removeAttribute('disabled');
     document.getElementById('email').removeAttribute('disabled');
 
-};
+}
 
 function information() {
     document.getElementById('main').style.display="none";
@@ -465,16 +467,16 @@ function information() {
     document.getElementById('information').style.display="";
 
     $.ajax({
-        url:"./Php/gettemp.php",/*待修改*/
-        type:"POST",
+        url:"/Home/Server/get_info",/*待修改*/
+        type:"GET",
         dataType:"json",
         data:{
 
         },
         success:function (data) {
 
-            document.getElementById('name').value=data.name;
-            document.getElementById('pwd').value=data.pwd;
+            document.getElementById('name').value=data.username;
+            document.getElementById('pwd').value=data.password;
             document.getElementById('phone').value=data.phone;
             document.getElementById('email').value=data.email;
 
@@ -501,100 +503,112 @@ function information() {
 }
 
 
-/*保存*/
-document.getElementById('save_infor').onclick=function () {
 
-    var email = document.getElementById("email").value;
-    var name = document.getElementById("user_name").value;
-    var pwd = document.getElementById("email").value;
-    var phone = document.getElementById("user_name").value;
-    var email_test =new RegExp("^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$");
+    document.getElementById('save_infor').onclick=function () {
 
-    var pwd_test=new RegExp("^[\\S]{6,12}$");
-    if(email===''){
-        layer.msg('邮箱不能为空', {
-            icon: 2,
-            time: 1000 //2秒关闭（如果不配置，默认是3秒）
-        }, );
-        return false;
-    }
-    if(pwd===''){
-        layer.msg('密码不能为空', {
-            icon: 2,
-            time: 1000 //2秒关闭（如果不配置，默认是3秒）
-        }, );
-        return false;
-    }
-
-    if(name===''){
-        layer.msg('用户名不能为空', {
-            icon: 2,
-            time: 1000 //2秒关闭（如果不配置，默认是3秒）
-        }, );
-        return false;
-    }
-
-    if(!email_test.test(email)){
-        layer.msg('邮箱格式不正确', {
-            icon: 2,
-            time: 1000 //2秒关闭（如果不配置，默认是3秒）
-        }, );
-        return false;
-    }
-    if(!pwd_test.test(pwd)){
-
-        layer.msg('密码必须6到12位，且不能出现空格', {
-            icon: 2,
-            time: 1000 //2秒关闭（如果不配置，默认是3秒）
-        }, );
-        return false;
-    }
-
-    $.ajax({
-        url:"./php/index2.php",/*待修改*/
-        type:"POST",
-        dataType:"json",
-        data:{
-            user:name,
-            pwd:pwd,
-            email:email,
-            phone:phone,
-        },
-        success:function (data) {
-
-            if(data.status){
-
-                document.getElementById('name').value=data.name;
-                document.getElementById('pwd').value=data.pwd;
-
-                document.getElementById('email').value=data.email;
-                document.getElementById('name').setAttribute('disabled','true');
-                document.getElementById('pwd').setAttribute('disabled','true');
-
-                document.getElementById('email').setAttribute('disabled','true');
-                layer.msg('保存成功', {
-                    icon: 1,
-                    time: 1000 //2秒关闭（如果不配置，默认是3秒）
-                }, );
-            }
-
-        },
-        error:function () {
-            layer.open({
-                type: 1
-                ,content: '<div style="width: 100px;height: 50px;margin: 0 auto;padding-top: 30px">'+ '无法连接服务器' +'</div>'
-                ,btn: '关闭'
-                ,offset: '100px'
-                ,btnAlign: 'c' //按钮居中
-                ,area: ['220px', ]
-                ,shade: 0 //不显示遮罩
-                ,yes: function(){
-                    layer.closeAll();
-                }
-            });
+        var email = document.getElementById("email").value;
+        var name = document.getElementById("user_name").value;
+        var pwd = document.getElementById("email").value;
+        var phone = document.getElementById("user_name").value;
+        var email_test =new RegExp("^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$");
+        var phone_test =new RegExp("^1[3|4|5|8][0-9]\\d{4,8}$");
+        var pwd_test=new RegExp("^[\\S]{6,12}$");
+        if(email===''){
+            layer.msg('邮箱不能为空', {
+                icon: 2,
+                time: 1000 //2秒关闭（如果不配置，默认是3秒）
+            }, );
+            return false;
         }
-    })
-}
+        if(pwd===''){
+            layer.msg('密码不能为空', {
+                icon: 2,
+                time: 1000 //2秒关闭（如果不配置，默认是3秒）
+            }, );
+            return false;
+        }
+        if(phone===''){
+            layer.msg('手机号不能为空', {
+                icon: 2,
+                time: 1000 //2秒关闭（如果不配置，默认是3秒）
+            }, );
+            return false;
+        }
+        if(name===''){
+            layer.msg('用户名不能为空', {
+                icon: 2,
+                time: 1000 //2秒关闭（如果不配置，默认是3秒）
+            }, );
+            return false;
+        }
+        if(!phone_test.test(phone)){
+            layer.msg('请输入正确的手机号', {
+                icon: 2,
+                time: 1000 //2秒关闭（如果不配置，默认是3秒）
+            }, );
+            return false;
+        }
+        if(!email_test.test(email)){
+            layer.msg('邮箱格式不正确', {
+                icon: 2,
+                time: 1000 //2秒关闭（如果不配置，默认是3秒）
+            }, );
+            return false;
+        }
+        if(!pwd_test.test(pwd)){
+
+            layer.msg('密码必须6到12位，且不能出现空格', {
+                icon: 2,
+                time: 1000 //2秒关闭（如果不配置，默认是3秒）
+            }, );
+            return false;
+        }
+
+        $.ajax({
+            url:"/Home/Client/update_info",/*待修改*/
+            type:"POST",
+            dataType:"json",
+            data:{
+                username:name,
+                password:pwd,
+                email:email,
+                phone:phone,
+            },
+            success:function (data) {
+
+               if(data.status){
+                   document.getElementById('name').value=data.name;
+                   document.getElementById('pwd').value=data.pwd;
+                   document.getElementById('phone').value=data.phone;
+                   document.getElementById('email').value=data.email;
+                   document.getElementById('name').setAttribute('disabled','true');
+                   document.getElementById('pwd').setAttribute('disabled','true');
+                   document.getElementById('phone').setAttribute('disabled','true');
+                   document.getElementById('email').setAttribute('disabled','true');
+                   layer.msg('保存成功', {
+                       icon: 1,
+                       time: 1000 //2秒关闭（如果不配置，默认是3秒）
+                   }, );
+               }
+
+
+            },
+            error:function () {
+                layer.open({
+                    type: 1
+                    ,content: '<div style="width: 100px;height: 50px;margin: 0 auto;padding-top: 30px">'+ '无法连接服务器' +'</div>'
+                    ,btn: '关闭'
+                    ,offset: '100px'
+                    ,btnAlign: 'c' //按钮居中
+                    ,area: ['220px', ]
+                    ,shade: 0 //不显示遮罩
+                    ,yes: function(){
+                        layer.closeAll();
+                    }
+                });
+            }
+        })
+    }
 
 
 /*返回按钮*/
@@ -608,59 +622,3 @@ function information_back() {
     document.getElementById('inbox').style.display="none";
     document.getElementById('information').style.display="none";
 }
-
-
-/*修改密码*/
-document.getElementById('change_password').onclick=function () {
-    document.getElementById('information1').style.display="none";
-    document.getElementById('information2').style.display="";
-
-}
-
-document.getElementById('save_pwd').onclick=function () {
-    var form_pwd = document.getElementById("form_password").value;
-    var new_pwd = document.getElementById("new_password").value;
-    $.ajax({
-        url:"./php/index2.php",/*待修改*/
-        type:"POST",
-        dataType:"json",
-        data:{
-
-            form_pwd:form_pwd,
-            new_pwd:new_pwd
-
-        },
-        success:function (data) {
-
-            if(data.status){
-                document.getElementById('information1').style.display="";
-                document.getElementById('information2').style.display="none";
-                layer.msg('保存成功', {
-                    icon: 1,
-                    time: 1000 //2秒关闭（如果不配置，默认是3秒）
-                }, );
-            }
-
-        },
-        error:function () {
-            layer.open({
-                type: 1
-                ,content: '<div style="width: 100px;height: 50px;margin: 0 auto;padding-top: 30px">'+ '无法连接服务器' +'</div>'
-                ,btn: '关闭'
-                ,offset: '100px'
-                ,btnAlign: 'c' //按钮居中
-                ,area: ['220px', ]
-                ,shade: 0 //不显示遮罩
-                ,yes: function(){
-                    layer.closeAll();
-                }
-            });
-        }
-    })
-}
-
-
-
-
-
-

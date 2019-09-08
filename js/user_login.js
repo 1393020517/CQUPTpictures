@@ -43,7 +43,7 @@ function delCookie(name){
 //         location = "./index.html"
 //     }
 // };
-
+//
 
 
 

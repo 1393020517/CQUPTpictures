@@ -48,7 +48,7 @@ window.onload=function () {
     var datas = url.match(/\?key=(.*)/)[1];
 
     $.ajax({
-        url:"./php/search.php",/*待修改*/
+        url:"/Home/Client/search",/*待修改*/
         type:"POST",
         dataType:"json",
         data:{
@@ -60,12 +60,12 @@ window.onload=function () {
 
             for(i=0;i<sort_pics.length;i++){
                 var sort_pic =sort_pics[i];
-                sort_pic.src=data[i].src
+                sort_pic.src=data[i].path
             }
             var sort_title=document.getElementsByClassName('sort_title');
             for(i=0;i<sort_title.length;i++){
                 var sorttitle=sort_title[i];
-                sorttitle.innerHTML=data[i].title
+                sorttitle.innerHTML=data[i].label
             }
 
         },
@@ -126,12 +126,12 @@ turn.onclick=function() {
     else {
         $.ajax({
 
-            url:"./php/index1.php",/*待修改*/
+            url:"/Home/Client/login",/*待修改*/
             type:"POST",
             dataType:"json",
             data:{
-                id:username,
-                pwd:userpwd
+                ID:username,
+                password:userpwd
             },
             xhrFields: {
                 withCredentials: true
@@ -142,7 +142,7 @@ turn.onclick=function() {
                     document.getElementById('login').style.display="none";
                     document.getElementById('user_page').style.display="";
                     setCookie('cookie_name',username,3600*2);
-                    document.getElementById('signform').style.display="none";
+
 
                 }
                 else {
@@ -289,7 +289,7 @@ layui.use('laypage', function(){
         ,jump: function(obj, first){
             //得到当前页，以便向服务端请求对应页的数据。
             $.ajax({
-                url:"./php/search.php",/*待修改*/
+                url:"/Home/Client/search",/*待修改*/
                 type:"POST",
                 dataType:"json",
                 data:{
@@ -301,12 +301,12 @@ layui.use('laypage', function(){
 
                     for(i=0;i<sort_pics.length;i++){
                         var sort_pic =sort_pics[i];
-                        sort_pic.src=data[i].src
+                        sort_pic.src=data[i].path
                     }
                     var sort_title=document.getElementsByClassName('sort_title');
                     for(i=0;i<sort_title.length;i++){
                         var sorttitle=sort_title[i];
-                        sorttitle.innerHTML=data[i].title
+                        sorttitle.innerHTML=data[i].label
                     }
 
                 },
@@ -338,11 +338,11 @@ layui.use('laypage', function(){
 function result_nice(number) {
     var pic=document.getElementById('result_pic'+number).src;
     $.ajax({
-        url:"./php/thumb-up.php",/*待修改*/
+        url:"/Home/Client/like",/*待修改*/
         type:"POST",
         dataType:"json",
         data:{
-            zan:pic,
+            path:pic,
 
         },
         success:function(data){
@@ -386,16 +386,16 @@ function result_nice(number) {
 function result_click(number) {
     var pic=document.getElementById('result_pic'+number).src;
     $.ajax({
-        url:"./php/click.php",/*待修改*/
+        url:"/Home/Client/click",/*待修改*/
         type:"POST",
         dataType:"json",
         data:{
-            click:pic,
+            path:pic,
 
         },
         success:function(data){
             if(data.status){
-                alert('ok')
+
             }
             else
             {
@@ -440,11 +440,11 @@ function result_collect(number) {
     else{
         var pic=document.getElementById('result_pic'+number).src;
         $.ajax({
-            url:"./php/favorite.php",/*待修改*/
+            url:"/Home/Client/favorite",/*待修改*/
             type:"POST",
             dataType:"json",
             data:{
-                fav:pic,
+                path:pic,
 
             },
             success:function(data){
@@ -513,11 +513,11 @@ changepwd.onclick =function() {
     }
     else {
         $.ajax({
-            url:"./php/index4.php",/*待修改*/
+            url:"/Home/Client/send_email",/*待修改*/
             type:"POST",
             dataType:"json",
             data:{
-                id:user_name,
+                ID:user_name,
                 email:email,
             },
             xhrFields: {
